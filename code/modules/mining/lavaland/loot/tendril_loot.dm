@@ -457,7 +457,7 @@
 //Immortality Talisman
 /obj/item/immortality_talisman
 	name = "Immortality Talisman"
-	desc = Таинственный талисман, способный даровать неуязвимость."
+	desc = "Таинственный талисман, способный даровать неуязвимость."
 	icon = 'icons/obj/lavaland/artefacts.dmi'
 	icon_state = "talisman"
 	resistance_flags = INDESTRUCTIBLE | LAVA_PROOF | FIRE_PROOF | UNACIDABLE | ACID_PROOF
