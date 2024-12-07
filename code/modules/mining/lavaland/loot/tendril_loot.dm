@@ -478,7 +478,7 @@
 
 /obj/item/immortality_talisman/attack_self(mob/user)
 	if(!COOLDOWN_FINISHED(src, last_used_immortality_talisman))
-		to_chat(user, span_warning("[src] is still recharging."))
+		balloon_alert(user, "перезарядка")
 		return
 
 	var/turf/source_turf = get_turf(src)
@@ -510,7 +510,7 @@
 
 	user.remove_traits(list(TRAIT_NO_TRANSFORM, TRAIT_GODMODE), UNIQUE_TRAIT_SOURCE(src))
 	user.forceMove(effect_turf)
-	user.visible_message(span_danger("[user] pops back into reality!"))
+	user.visible_message(span_danger("[user] вновь появля[pluralize_ru(user.gender, "ет", "ют")]ся в этой реальности!"))
 	effect.can_destroy = TRUE
 
 	if(length(effect.contents))
