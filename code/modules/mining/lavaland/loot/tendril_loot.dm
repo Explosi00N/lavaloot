@@ -143,7 +143,7 @@
 
 /obj/item/book_of_babel/attack_self(mob/living/carbon/user)
 	if(HAS_TRAIT(user, TRAIT_NO_BABEL))
-		user.visible_message(span_notice("[user] внезапно останавлива[pluralize_ru(user, "ет", "ют"]ся, осознавая [src]."))
+		user.visible_message(span_notice("[user] внезапно останавлива[pluralize_ru(user, "ет", "ют")]ся, осознавая [src]."))
 		to_chat(user, span_warning("Вы не знаете что такое книга, не говоря уже о том что с ней делать."))
 		return
 
@@ -444,7 +444,7 @@
 		var/turf/firer_turf = get_turf(firer)
 		var/mob/living/L = target
 		if(!L.anchored && L.loc)
-			L.visible_message(<span_danger("[firer] утаскива[pluralize_ru(user.gender, "ет", "ют")] [L] своим крюком!"))
+			L.visible_message(span_danger("[firer] утаскива[pluralize_ru(user.gender, "ет", "ют")] [L] своим крюком!"))
 			ADD_TRAIT(L, TRAIT_UNDENSE, UNIQUE_TRAIT_SOURCE(src)) // Ensures the hook does not hit the target multiple times
 			L.forceMove(firer_turf)
 			REMOVE_TRAIT(L, TRAIT_UNDENSE, UNIQUE_TRAIT_SOURCE(src))
