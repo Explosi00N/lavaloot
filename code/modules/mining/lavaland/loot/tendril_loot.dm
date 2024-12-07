@@ -444,7 +444,7 @@
 		var/turf/firer_turf = get_turf(firer)
 		var/mob/living/L = target
 		if(!L.anchored && L.loc)
-			L.visible_message(span_danger("[firer] утаскива[pluralize_ru(user.gender, "ет", "ют")] [L] своим крюком!"))
+			L.visible_message(span_danger("[firer] утаскива[pluralize_ru(firer, "ет", "ют")] [L] своим крюком!"))
 			ADD_TRAIT(L, TRAIT_UNDENSE, UNIQUE_TRAIT_SOURCE(src)) // Ensures the hook does not hit the target multiple times
 			L.forceMove(firer_turf)
 			REMOVE_TRAIT(L, TRAIT_UNDENSE, UNIQUE_TRAIT_SOURCE(src))
@@ -487,7 +487,7 @@
 
 	COOLDOWN_START(src, last_used_immortality_talisman, 60 SECONDS)
 	SSblackbox.record_feedback("amount", "immortality_talisman_uses", 1)
-	user.visible_message(span_danger("выпада[pluralize_ru(user.gender, "ет", "ют")] из реальности, оставляя после себя дыру в пространстве!"))
+	user.visible_message(span_danger("выпада[pluralize_ru(user, "ет", "ют")] из реальности, оставляя после себя дыру в пространстве!"))
 
 	var/obj/effect/immortality_talisman/effect = new(source_turf)
 	effect.name = "hole in reality"
