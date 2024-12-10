@@ -21,7 +21,7 @@
 	// basically we cannot put one bag in the storage if another one is already there
 	if(istype(I) && I.bag && I.bag == src && I.twin_storage && I.twin_storage.loc == src)
 		if(!stop_messages)
-			to_chat(usr, span_warning("И как ты собираешься это сделать?"))
+			balloon_alert(usr, "невозможно!")
 		return FALSE
 	return ..()
 
