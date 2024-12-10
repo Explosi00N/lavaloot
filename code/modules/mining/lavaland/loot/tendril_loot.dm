@@ -291,7 +291,6 @@
 		set_light_on(FALSE)
 
 		user.update_sight()
-		to_chat(user, span_notice("Дух улучшает ваше зрение."))
 
 		SSblackbox.record_feedback("tally", "wisp_lantern", 1, "Freed") // freed
 	else
@@ -303,7 +302,6 @@
 		set_light_on(TRUE)
 
 		user.update_sight()
-		to_chat(user, span_notice("Ваше зрение вновь вернулось в норму."))
 
 		update_icon(UPDATE_ICON_STATE)
 		SSblackbox.record_feedback("tally", "wisp_lantern", 1, "Returned") // returned
