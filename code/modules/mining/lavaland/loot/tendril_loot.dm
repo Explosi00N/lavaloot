@@ -31,12 +31,12 @@
 	name = "paradox bag"
 	desc = "Каким-то образом, эта сумка существует в двух местах одновременно."
 	ru_names = list(
-		NOMINATIVE = "сумка парадокса",
-		GENITIVE = "сумки парадокса",
-		DATIVE = "сумке парадокса",
-		ACCUSATIVE = "сумку парадокса",
-		INSTRUMENTAL = "сумкой парадокса",
-		PREPOSITIONAL = "сумке парадокса"
+		NOMINATIVE = "парадоксальная сумка",
+		GENITIVE = "парадоксальной сумки",
+		DATIVE = "парадоксальной сумке",
+		ACCUSATIVE = "парадоксальную сумку",
+		INSTRUMENTAL = "парадоксальной сумкой",
+		PREPOSITIONAL = "парадоксальной сумке"
 	)
 	icon = 'icons/obj/storage.dmi'
 	icon_state = "cultpack"
