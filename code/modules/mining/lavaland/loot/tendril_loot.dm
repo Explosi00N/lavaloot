@@ -5,12 +5,12 @@
 	name = "paradox bag"
 	desc = "Каким-то образом, эта сумка существует в двух местах одновременно."
 	ru_names = list(
-		NOMINATIVE = "сумка парадокса",
-		GENITIVE = "сумки парадокса",
-		DATIVE = "сумке парадокса",
-		ACCUSATIVE = "сумку парадокса",
-		INSTRUMENTAL = "сумкой парадокса",
-		PREPOSITIONAL = "сумке парадокса"
+		NOMINATIVE = "парадоксальная сумка",
+		GENITIVE = "парадоксальной сумки",
+		DATIVE = "парадоксальной сумке",
+		ACCUSATIVE = "парадоксальную сумку",
+		INSTRUMENTAL = "парадоксальной сумкой",
+		PREPOSITIONAL = "парадоксальной сумке"
 	)
 	max_combined_w_class = 60
 	max_w_class = WEIGHT_CLASS_NORMAL
@@ -465,7 +465,7 @@
 		var/turf/firer_turf = get_turf(firer)
 		var/mob/living/L = target
 		if(!L.anchored && L.loc)
-			L.visible_message(span_danger("[firer] зацепля[pluralize_ru(firer, "ет", "ют")] [L.declent_ru(ACCUSATIVE)] [declent_ru(INSTRUMENTAL)]!"))
+			L.visible_message(span_danger("[firer] зацепля[pluralize_ru(firer, "ет", "ют")] [L] [declent_ru(INSTRUMENTAL)]!"))
 			ADD_TRAIT(L, TRAIT_UNDENSE, UNIQUE_TRAIT_SOURCE(src)) // Ensures the hook does not hit the target multiple times
 			L.forceMove(firer_turf)
 			REMOVE_TRAIT(L, TRAIT_UNDENSE, UNIQUE_TRAIT_SOURCE(src))
