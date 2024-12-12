@@ -143,8 +143,11 @@
 
 /obj/item/book_of_babel/attack_self(mob/living/carbon/user)
 	if(HAS_TRAIT(user, TRAIT_NO_BABEL))
-		user.visible_message(span_notice("[user] внезапно останавлива[pluralize_ru(user, "ет", "ют")]ся, недоумённо глядя на [declent_ru(GENITIVE)]."))
-		to_chat(user, span_warning("Вы понятия не имеете, что это такое и что с этим делать."))
+		user.visible_message(
+			span_notice("[user] внезапно останавлива[pluralize_ru(user, "ет", "ют")]ся, недоумённо глядя на [declent_ru(GENITIVE)]."), 
+			span_warning("Вы понятия не имеете, что это такое и что с этим делать.")
+		)
+			
 		return
 
 	to_chat(user, "Вы упоённо пролистываете страницы книги, вбирая в себя знания всех существующих языков во Вселенной. К сожалению, [declent_ru(NOMINATIVE)] не выдерживает такого напора и рассыпается в прах. Ой...")
@@ -235,7 +238,7 @@
 // Inherit from unbreakable but don't set ID, to suppress the default Z linkage
 /obj/structure/ladder/unbreakable/jacob
 	name = "jacob's ladder"
-	desc = "Нерушимая небестная лестница, нарушающая законы физики."
+	desc = "Нерушимая небесная лестница, нарушающая законы физики."
 	ru_names = list(
 		NOMINATIVE = "лестница Иакова",
 		GENITIVE = "лестницы Иакова",
