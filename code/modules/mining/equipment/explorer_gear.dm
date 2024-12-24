@@ -1,7 +1,15 @@
 /****************Explorer's Suit and Mask****************/
 /obj/item/clothing/suit/hooded/explorer
 	name = "explorer suit"
-	desc = "An armoured suit for exploring harsh environments."
+	desc = "Бронированный костюм, созданный для исследования и работы в суровых условиях."
+	ru_names = list(
+		NOMINATIVE = "костюм исследователя",
+		GENITIVE = "костюма исследователя",
+		DATIVE = "костюму исследователя",
+		ACCUSATIVE = "костюм исследователя",
+		INSTRUMENTAL = "костюмом исследователя",
+		PREPOSITIONAL = "костюме исследователя"
+	)
 	icon_state = "explorer"
 	item_state = "explorer"
 	item_color = "explorer"
@@ -34,7 +42,15 @@
 
 /obj/item/clothing/head/hooded/explorer
 	name = "explorer hood"
-	desc = "An armoured hood for exploring harsh environments."
+	desc = "Бронированный капюшон, созданный для исследования и работы в суровых условиях."
+	ru_names = list(
+		NOMINATIVE = "капюшон исследователя",
+		GENITIVE = "капюшона исследователя",
+		DATIVE = "капюшону исследователя",
+		ACCUSATIVE = "капюшон исследователя",
+		INSTRUMENTAL = "капюшоном исследователя",
+		PREPOSITIONAL = "капюшоне исследователя"
+	)
 	icon_state = "explorer"
 	item_state = "explorer"
 	body_parts_covered = HEAD
@@ -65,7 +81,15 @@
 
 /obj/item/clothing/suit/space/hostile_environment
 	name = "H.E.C.K. suit"
-	desc = "Hostile Environment Cross-Kinetic Suit: A suit designed to withstand the wide variety of hazards from Lavaland. It wasn't enough for its last owner."
+	desc = "Экзо-Кинетический Защитно-Оборонительный Костюм: Костюм, специально созданный для защиты от широкого спектра опасностей Лаваленда. Прошлому его владельцу этого, видимо, не хватило."
+	ru_names = list(
+		NOMINATIVE = "Э.К.З.О. костюм",
+		GENITIVE = "Э.К.З.О. костюма ",
+		DATIVE = "Э.К.З.О. костюму",
+		ACCUSATIVE = "Э.К.З.О. костюм",
+		INSTRUMENTAL = "Э.К.З.О. костюмом",
+		PREPOSITIONAL = "Э.К.З.О. костюме"
+	)
 	icon_state = "hostile_env"
 	item_state = "hostile_env"
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
@@ -103,13 +127,21 @@
 	if(istype(C) && prob(2)) //cursed by bubblegum
 		if(prob(15))
 			new /obj/effect/hallucination/delusion(C.loc, C, force_kind = "demon", duration = 100, skip_nearby = 0)
-			to_chat(C, "<span class='colossus'><b>[pick("I AM IMMORTAL.","KILL THEM ALL!","I SEE YOU.","WE ARE THE SAME!","DEATH CANNOT HOLD ME.")]</b></span>")
+			to_chat(C, "<span class='colossus'><b>[pick("МЕНЯ НЕ УБИТЬ.","НАЧНИ ТУТ РЕЗНЮ!","Я ТЕБЯ ВИЖУ.","МЫ ОДНО ЦЕЛОЕ!","СМЕРТИ МЕНЯ НЕ СДЕРЖАТЬ.","УСТРОЙ КРОВАВУЮ БАНЮ!")]</b></span>")
 		else
-			to_chat(C, "<span class='warning'>[pick("You hear faint whispers.","You smell ash.","You feel hot.","You hear a roar in the distance.")]</span>")
+			to_chat(C, "<span class='warning'>[pick("Вы слышите тихий шепот.","Вы чуете пепел.","Вам жарко.","Вы слышите рёв вдали.")]</span>")
 
 /obj/item/clothing/head/helmet/space/hostile_environment
 	name = "H.E.C.K. helmet"
-	desc = "Hostile Environiment Cross-Kinetic Helmet: A helmet designed to withstand the wide variety of hazards from Lavaland. It wasn't enough for its last owner."
+	desc = "Экзо-Кинетический Защитно-Оборонительный шлем: Шлем, специально созданный для защиты от широкого спектра опасностей Лаваленда. Прошлому его владельцу этого, видимо, не хватило"
+	ru_names = list(
+		NOMINATIVE = "шлем Н.Е.С.К.",
+		GENITIVE = "шлема Н.Е.С.К.",
+		DATIVE = "шлему Н.Е.С.К.",
+		ACCUSATIVE = "шлем Н.Е.С.К.",
+		INSTRUMENTAL = "шлемом Н.Е.С.К.",
+		PREPOSITIONAL = "шлемме Н.Е.С.К."
+	)
 	icon_state = "hostile_env"
 	item_state = "hostile_env"
 	w_class = WEIGHT_CLASS_NORMAL
@@ -141,7 +173,7 @@
 
 /obj/item/clothing/head/helmet/space/hardsuit/champion
 	name = "champion's helmet"
-	desc = "Peering into the eyes of the helmet is enough to seal damnation."
+	desc = "Peering into the eyes of the helmet is enough to seal damnation. Лишь"
 	icon_state = "hardsuit0-berserker"
 	item_color = "berserker"
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
@@ -223,7 +255,7 @@
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/pickaxe, /obj/item/twohanded/spear, /obj/item/organ/internal/regenerative_core/legion, /obj/item/kitchen/knife/combat/survival, /obj/item/twohanded/kinetic_crusher, /obj/item/hierophant_club, /obj/item/twohanded/fireaxe/boneaxe)
 	icon_state = "pathcloak"
 	item_state = "pathcloak"
-	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 35, "bomb" = 50, "bio" = 100, "rad" = 50, "fire" = 50, "acid" = 50)
+	armor = list("melee" = 40, "bullet" = 40, "laser" = 40, "energy" = 40, "bomb" = 60, "bio" = 100, "rad" = 50, "fire" = 50, "acid" = 50)
 	resistance_flags = FIRE_PROOF
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
 	min_cold_protection_temperature = FIRE_SUIT_MIN_TEMP_PROTECT
@@ -253,7 +285,7 @@
 	body_parts_covered = HEAD
 	flags_inv = HIDEHAIR
 	flags_cover = HEADCOVERSEYES
-	armor = list("melee" = 35, "bullet" = 35, "laser" = 35, "energy" = 35, "bomb" = 50, "bio" = 100, "rad" = 50, "fire" = 50, "acid" = 50)
+	armor = list("melee" = 40, "bullet" = 40, "laser" = 40, "energy" = 40, "bomb" = 60, "bio" = 100, "rad" = 50, "fire" = 50, "acid" = 50)
 	resistance_flags = FIRE_PROOF
 	min_cold_protection_temperature = FIRE_HELM_MIN_TEMP_PROTECT
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
