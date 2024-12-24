@@ -81,7 +81,7 @@
 
 /obj/item/clothing/suit/space/hostile_environment
 	name = "H.E.C.K. suit"
-	desc = "Экзо-Кинетический Защитно-Оборонительный Костюм: Костюм, специально созданный для защиты от широкого спектра опасностей Лаваленда. Прошлому его владельцу этого, видимо, не хватило."
+	desc = "Экзо-Кинетический Защитно-Оборонный Костюм: Костюм, специально созданный для защиты от широкого спектра опасностей Лаваленда. Прошлому его владельцу этого, видимо, не хватило."
 	ru_names = list(
 		NOMINATIVE = "Э.К.З.О. костюм",
 		GENITIVE = "Э.К.З.О. костюма ",
@@ -133,14 +133,14 @@
 
 /obj/item/clothing/head/helmet/space/hostile_environment
 	name = "H.E.C.K. helmet"
-	desc = "Экзо-Кинетический Защитно-Оборонительный шлем: Шлем, специально созданный для защиты от широкого спектра опасностей Лаваленда. Прошлому его владельцу этого, видимо, не хватило"
+	desc = "Экзо-Кинетический Защитно-Оборонный шлем: Шлем, специально созданный для защиты от широкого спектра опасностей Лаваленда. Прошлому его владельцу этого, видимо, не хватило"
 	ru_names = list(
-		NOMINATIVE = "шлем Н.Е.С.К.",
-		GENITIVE = "шлема Н.Е.С.К.",
-		DATIVE = "шлему Н.Е.С.К.",
-		ACCUSATIVE = "шлем Н.Е.С.К.",
-		INSTRUMENTAL = "шлемом Н.Е.С.К.",
-		PREPOSITIONAL = "шлемме Н.Е.С.К."
+		NOMINATIVE = "Э.К.З.О. шлем",
+		GENITIVE = "Э.К.З.О. шлема ",
+		DATIVE = "Э.К.З.О. шлему",
+		ACCUSATIVE = "Э.К.З.О. шлем",
+		INSTRUMENTAL = "Э.К.З.О. шлемом",
+		PREPOSITIONAL = "Э.К.З.О. шлеме"
 	)
 	icon_state = "hostile_env"
 	item_state = "hostile_env"
@@ -173,7 +173,15 @@
 
 /obj/item/clothing/head/helmet/space/hardsuit/champion
 	name = "champion's helmet"
-	desc = "Peering into the eyes of the helmet is enough to seal damnation. Лишь"
+	desc = "Лишь одного взгляда в глаза этого шлема хватит, чтобы посеять ужас."
+	ru_names = list(
+        NOMINATIVE = "чемпионский шлем"
+        GENITIVE = "чемпионского шлема"
+        DATIVE = "чемпионскому шлему"
+        ACCUSATIVE = "чемпионский шлем"
+        INSTRUMENTAL = "чемпионским шлемом"
+        PREPOSITIONAL = "чемпионском шлеме"
+	)
 	icon_state = "hardsuit0-berserker"
 	item_color = "berserker"
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
@@ -192,7 +200,15 @@
 
 /obj/item/clothing/suit/space/hardsuit/champion
 	name = "champion's hardsuit"
-	desc = "Voices echo from the hardsuit, driving the user insane."
+	desc = "Изнутри этого экзокостюма эхом проносятся голоса, медленно сводя с ума своего носителя."
+	ru_names = list(
+        NOMINATIVE = "чемпионская броня"
+        GENITIVE = "чемпионской брони"
+        DATIVE = "чемпионской броне"
+        ACCUSATIVE = "чемпионскую броню"
+        INSTRUMENTAL = "чемпионской броней"
+        PREPOSITIONAL = "чемпионской броне"
+	)
 	icon_state = "hardsuit-berserker"
 	max_heat_protection_temperature = FIRE_IMMUNITY_MAX_TEMP_PROTECT
 	slowdown = 0.25 // you are wearing a POWERFUL energy suit, after all
@@ -212,13 +228,29 @@
 
 /obj/item/clothing/head/helmet/space/hardsuit/champion/templar
 	name = "dark templar's helmet"
-	desc = "Through darkness we see the light"
+	desc = "Через тьму мы видим свет."
+	ru_names = list(
+        NOMINATIVE = "шлем темного Тамплиера"
+        GENITIVE = "шлема темного Тамплиера"
+        DATIVE = "шлему темного Тамплиера"
+        ACCUSATIVE = "шлем темного Тамплиера"
+        INSTRUMENTAL = "шлемом темного Тамплиера"
+        PREPOSITIONAL = "шлеме темного Тамплиера"
+	)
 	icon_state = "hardsuit0-templar"
 	item_color = "templar"
 
 /obj/item/clothing/suit/space/hardsuit/champion/templar
 	name = "dark templar's hardsuit"
-	desc = "No Pity! No Remorse! No Fear!"
+	desc = "Без стыда! Без сожалений! Без страха!"
+	ru_names = list(
+        NOMINATIVE = "доспехи темного Тамплиера"
+        GENITIVE = "доспехов темного Тамплиера"
+        DATIVE = "доспехам темного Тамплиера"
+        ACCUSATIVE = "доспехи темного Тамплиера"
+        INSTRUMENTAL = "доспехами темного Тамплиера"
+        PREPOSITIONAL = "доспехах темного Тамплиера"
+	)
 	icon_state = "darktemplar-follower0"
 	item_color = "darktemplar-follower0"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/champion/templar
