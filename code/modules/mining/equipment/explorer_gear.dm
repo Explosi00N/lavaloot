@@ -175,11 +175,11 @@
 	name = "champion's helmet"
 	desc = "Лишь одного взгляда в глаза этого шлема хватит, чтобы посеять ужас."
 	ru_names = list(
-        NOMINATIVE = "чемпионский шлем"
-        GENITIVE = "чемпионского шлема"
-        DATIVE = "чемпионскому шлему"
-        ACCUSATIVE = "чемпионский шлем"
-        INSTRUMENTAL = "чемпионским шлемом"
+        NOMINATIVE = "чемпионский шлем",
+        GENITIVE = "чемпионского шлема",
+        DATIVE = "чемпионскому шлему",
+        ACCUSATIVE = "чемпионский шлем",
+        INSTRUMENTAL = "чемпионским шлемом",
         PREPOSITIONAL = "чемпионском шлеме"
 	)
 	icon_state = "hardsuit0-berserker"
@@ -202,11 +202,11 @@
 	name = "champion's hardsuit"
 	desc = "Изнутри этой брони эхом проносятся голоса, медленно сводя с ума своего носителя."
 	ru_names = list(
-        NOMINATIVE = "чемпионская броня"
-        GENITIVE = "чемпионской брони"
-        DATIVE = "чемпионской броне"
-        ACCUSATIVE = "чемпионскую броню"
-        INSTRUMENTAL = "чемпионской броней"
+        NOMINATIVE = "чемпионская броня",
+        GENITIVE = "чемпионской брони",
+        DATIVE = "чемпионской броне",
+        ACCUSATIVE = "чемпионскую броню",
+        INSTRUMENTAL = "чемпионской броней",
         PREPOSITIONAL = "чемпионской броне"
 	)
 	icon_state = "hardsuit-berserker"
@@ -230,11 +230,11 @@
 	name = "dark templar's helmet"
 	desc = "Через тьму мы видим свет."
 	ru_names = list(
-        NOMINATIVE = "шлем темного Тамплиера"
-        GENITIVE = "шлема темного Тамплиера"
-        DATIVE = "шлему темного Тамплиера"
-        ACCUSATIVE = "шлем темного Тамплиера"
-        INSTRUMENTAL = "шлемом темного Тамплиера"
+        NOMINATIVE = "шлем темного Тамплиера",
+        GENITIVE = "шлема темного Тамплиера",
+        DATIVE = "шлему темного Тамплиера",
+        ACCUSATIVE = "шлем темного Тамплиера",
+        INSTRUMENTAL = "шлемом темного Тамплиера",
         PREPOSITIONAL = "шлеме темного Тамплиера"
 	)
 	icon_state = "hardsuit0-templar"
@@ -244,11 +244,11 @@
 	name = "dark templar's hardsuit"
 	desc = "Без стыда! Без сожалений! Без страха!"
 	ru_names = list(
-        NOMINATIVE = "доспехи темного Тамплиера"
-        GENITIVE = "доспехов темного Тамплиера"
-        DATIVE = "доспехам темного Тамплиера"
-        ACCUSATIVE = "доспехи темного Тамплиера"
-        INSTRUMENTAL = "доспехами темного Тамплиера"
+        NOMINATIVE = "доспехи темного Тамплиера",
+        GENITIVE = "доспехов темного Тамплиера",
+        DATIVE = "доспехам темного Тамплиера",
+        ACCUSATIVE = "доспехи темного Тамплиера",
+        INSTRUMENTAL = "доспехами темного Тамплиера",
         PREPOSITIONAL = "доспехах темного Тамплиера"
 	)
 	icon_state = "darktemplar-follower0"
@@ -260,11 +260,11 @@
 	name = "high dark templar's helmet"
 	desc = "Эта галактика принадлежит Императору..."
 	ru_names = list(
-        NOMINATIVE = "шлем высшего темного Тамплиера"
-        GENITIVE = "шлема высшего темного Тамплиера"
-        DATIVE = "шлему высшего темного Тамплиера"
-        ACCUSATIVE = "шлем высшего темного Тамплиера"
-        INSTRUMENTAL = "шлемом высшего темного Тамплиера"
+        NOMINATIVE = "шлем высшего темного Тамплиера",
+        GENITIVE = "шлема высшего темного Тамплиера",
+        DATIVE = "шлему высшего темного Тамплиера",
+        ACCUSATIVE = "шлем высшего темного Тамплиера",
+        INSTRUMENTAL = "шлемом высшего темного Тамплиера",
         PREPOSITIONAL = "шлеме высшего темного Тамплиера"
 	)
 	icon_state = "hardsuit0-hightemplar"
@@ -274,11 +274,11 @@
 	name = "high dark templar's hardsuit"
 	desc = "...И все кто не согласны с данным утверждение являются врагами, которые должны быть уничтожены."
 	ru_names = list(
-        NOMINATIVE = "доспехи высшего темного Тамплиера"
-        GENITIVE = "доспехов высшего темного Тамплиера"
-        DATIVE = "доспехам высшего темного Тамплиера"
-        ACCUSATIVE = "доспехи высшего темного Тамплиера"
-        INSTRUMENTAL = "доспехами высшего темного Тамплиера"
+        NOMINATIVE = "доспехи высшего темного Тамплиера",
+        GENITIVE = "доспехов высшего темного Тамплиера",
+        DATIVE = "доспехам высшего темного Тамплиера",
+        ACCUSATIVE = "доспехи высшего темного Тамплиера",
+        INSTRUMENTAL = "доспехами высшего темного Тамплиера",
         PREPOSITIONAL = "доспехах высшего темного Тамплиера"
 	)
 	icon_state = "darktemplar-chaplain0"
@@ -289,11 +289,11 @@
 	name = "inquisitor's helmet"
 	desc = "Шлем носимый теми, кто на хлеб зарабатывает борьбой с паранормальным."
 	ru_names = list(
-        NOMINATIVE = "шлем Инквизитора"
-        GENITIVE = "шлема Инквизитора"
-        DATIVE = "шлему Инквизитора"
-        ACCUSATIVE = "шлем Инквизитора"
-        INSTRUMENTAL = "шлемом Инквизитора"
+        NOMINATIVE = "шлем Инквизитора",
+        GENITIVE = "шлема Инквизитора",
+        DATIVE = "шлему Инквизитора",
+        ACCUSATIVE = "шлем Инквизитора",
+        INSTRUMENTAL = "шлемом Инквизитора",
         PREPOSITIONAL = "шлеме Инквизитора"
 	)
 	icon_state = "hardsuit0-inquisitor"
@@ -303,11 +303,11 @@
 	name = "inquisitor's hardsuit"
 	desc = "Мощные охранные чары встроены в этот ИКС, защищая носителя от всего спектра паранормальных угроз"
 	ru_names = list(
-        NOMINATIVE = "ИКС Инквизитора"
-        GENITIVE = "ИКС Инквизитора"
-        DATIVE = "ИКС Инквизитора"
-        ACCUSATIVE = "ИКС Инквизитора"
-        INSTRUMENTAL = "ИКС Инквизитора"
+        NOMINATIVE = "ИКС Инквизитора",
+        GENITIVE = "ИКС Инквизитора",
+        DATIVE = "ИКС Инквизитора",
+        ACCUSATIVE = "ИКС Инквизитора",
+        INSTRUMENTAL = "ИКС Инквизитора",
         PREPOSITIONAL = "ИКС Инквизитора"
   )
 	icon_state = "hardsuit-inquisitor"
@@ -317,11 +317,11 @@
 	name = "pathfinder cloak"
 	desc = "Тяжелая мантия сшитая из сухожилий и шкур, предназначенная для защиты носителя от опасной погоды."
 	ru_names = list(
-        NOMINATIVE = "мантия первопроходца"
-        GENITIVE = "мантии первопроходца"
-        DATIVE = "мантии первопроходца"
-        ACCUSATIVE = "мантию первопроходца"
-        INSTRUMENTAL = "мантией первопроходца"
+        NOMINATIVE = "мантия первопроходца",
+        GENITIVE = "мантии первопроходца",
+        DATIVE = "мантии первопроходца",
+        ACCUSATIVE = "мантию первопроходца",
+        INSTRUMENTAL = "мантией первопроходца",
         PREPOSITIONAL = "мантии первопроходца"
 	)
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/pickaxe, /obj/item/twohanded/spear, /obj/item/organ/internal/regenerative_core/legion, /obj/item/kitchen/knife/combat/survival, /obj/item/twohanded/kinetic_crusher, /obj/item/hierophant_club, /obj/item/twohanded/fireaxe/boneaxe)
@@ -353,11 +353,11 @@
 	name = "pathfinder kasa"
 	desc = "A helmet crafted from bones and sinew meant to protect its wearer from hazardous weather."
 	ru_names = list(
-        NOMINATIVE = "каса первопроходца"
-        GENITIVE = "касы первопроходца"
-        DATIVE = "касе первопроходца"
-        ACCUSATIVE = "касу первопроходца"
-        INSTRUMENTAL = "касой первопроходца"
+        NOMINATIVE = "каса первопроходца",
+        GENITIVE = "касы первопроходца",
+        DATIVE = "касе первопроходца",
+        ACCUSATIVE = "касу первопроходца",
+        INSTRUMENTAL = "касой первопроходца",
         PREPOSITIONAL = "касе первопроходца"
 	)
 	icon_state = "pathhead"
