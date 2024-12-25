@@ -351,7 +351,7 @@
 
 /obj/item/clothing/head/hooded/pathfinder
 	name = "pathfinder kasa"
-	desc = "A helmet crafted from bones and sinew meant to protect its wearer from hazardous weather."
+	desc = "Головной убор созданный из костей и связок, защищающий носителя от опасной погоды"
 	ru_names = list(
         NOMINATIVE = "каса первопроходца",
         GENITIVE = "касы первопроходца",
