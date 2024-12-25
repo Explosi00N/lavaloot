@@ -127,9 +127,9 @@
 	if(istype(C) && prob(2)) //cursed by bubblegum
 		if(prob(15))
 			new /obj/effect/hallucination/delusion(C.loc, C, force_kind = "demon", duration = 100, skip_nearby = 0)
-			to_chat(C, "<span class='colossus'><b>[pick("МЕНЯ НЕ УБИТЬ.","НАЧНИ ТУТ РЕЗНЮ!","Я ТЕБЯ ВИЖУ.","МЫ ОДНО ЦЕЛОЕ!","СМЕРТИ МЕНЯ НЕ СДЕРЖАТЬ.","УСТРОЙ КРОВАВУЮ БАНЮ!")]</b></span>")
+			to_chat(C, span_colossus("<b>[pick("МЕНЯ НЕ УБИТЬ.","НАЧНИ ТУТ РЕЗНЮ!","Я ТЕБЯ ВИЖУ.","МЫ ОДНО ЦЕЛОЕ!","СМЕРТИ МЕНЯ НЕ СДЕРЖАТЬ.","УСТРОЙ КРОВАВУЮ БАНЮ!")]</b>"))
 		else
-			to_chat(C, "<span class='warning'>[pick("Вы слышите тихий шепот.","Вы чуете пепел.","Вам жарко.","Вы слышите рёв вдали.")]</span>")
+			to_chat(C, span_warning("[pick("Вы слышите тихий шепот.","Вы чуете пепел.","Вам жарко.","Вы слышите рёв вдали.")]"))
 
 /obj/item/clothing/head/helmet/space/hostile_environment
 	name = "H.E.C.K. helmet"
