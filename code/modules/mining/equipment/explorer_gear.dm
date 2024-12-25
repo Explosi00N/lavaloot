@@ -81,7 +81,7 @@
 
 /obj/item/clothing/suit/space/hostile_environment
 	name = "H.E.C.K. suit"
-	desc = "Экзо-Кинетический Защитно-Оборонный Костюм: Костюм, специально созданный для защиты от широкого спектра опасностей Лаваленда. Прошлому его владельцу этого, видимо, не хватило."
+	desc = "Экзо-Кинетический Защитно-Обшитый Костюм: Костюм, специально созданный для защиты от широкого спектра опасностей Лаваленда. Прошлому его владельцу этого, видимо, не хватило."
 	ru_names = list(
 		NOMINATIVE = "Э.К.З.О. костюм",
 		GENITIVE = "Э.К.З.О. костюма ",
@@ -133,7 +133,7 @@
 
 /obj/item/clothing/head/helmet/space/hostile_environment
 	name = "H.E.C.K. helmet"
-	desc = "Экзо-Кинетический Защитно-Оборонный шлем: Шлем, специально созданный для защиты от широкого спектра опасностей Лаваленда. Прошлому его владельцу этого, видимо, не хватило"
+	desc = "Экзо-Кинетический Защитно-Обшитый шлем: Шлем, специально созданный для защиты от широкого спектра опасностей Лаваленда. Прошлому его владельцу этого, видимо, не хватило"
 	ru_names = list(
 		NOMINATIVE = "Э.К.З.О. шлем",
 		GENITIVE = "Э.К.З.О. шлема ",
@@ -200,7 +200,7 @@
 
 /obj/item/clothing/suit/space/hardsuit/champion
 	name = "champion's hardsuit"
-	desc = "Изнутри этого экзокостюма эхом проносятся голоса, медленно сводя с ума своего носителя."
+	desc = "Изнутри этой брони эхом проносятся голоса, медленно сводя с ума своего носителя."
 	ru_names = list(
         NOMINATIVE = "чемпионская броня"
         GENITIVE = "чемпионской брони"
@@ -258,32 +258,72 @@
 
 /obj/item/clothing/head/helmet/space/hardsuit/champion/templar/premium
 	name = "high dark templar's helmet"
-	desc = "The galaxy is the Emperor's.."
+	desc = "Эта галактика принадлежит Императору..."
+	ru_names = list(
+        NOMINATIVE = "шлем высшего темного Тамплиера"
+        GENITIVE = "шлема высшего темного Тамплиера"
+        DATIVE = "шлему высшего темного Тамплиера"
+        ACCUSATIVE = "шлем высшего темного Тамплиера"
+        INSTRUMENTAL = "шлемом высшего темного Тамплиера"
+        PREPOSITIONAL = "шлеме высшего темного Тамплиера"
+	)
 	icon_state = "hardsuit0-hightemplar"
 	item_color = "hightemplar"
 
 /obj/item/clothing/suit/space/hardsuit/champion/templar/premium
 	name = "high dark templar's hardsuit"
-	desc = "..And anyone or anything who challenges that claim is an enemy who must be destroyed."
+	desc = "...И все кто не согласны с данным утверждение являются врагами, которые должны быть уничтожены."
+	ru_names = list(
+        NOMINATIVE = "доспехи высшего темного Тамплиера"
+        GENITIVE = "доспехов высшего темного Тамплиера"
+        DATIVE = "доспехам высшего темного Тамплиера"
+        ACCUSATIVE = "доспехи высшего темного Тамплиера"
+        INSTRUMENTAL = "доспехами высшего темного Тамплиера"
+        PREPOSITIONAL = "доспехах высшего темного Тамплиера"
+	)
 	icon_state = "darktemplar-chaplain0"
 	item_color = "darktemplar-chaplain0"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/champion/templar/premium
 
 /obj/item/clothing/head/helmet/space/hardsuit/champion/inquisitor
 	name = "inquisitor's helmet"
-	desc = "A helmet worn by those who deal with paranormal threats for a living."
+	desc = "Шлем носимый теми, кто на хлеб зарабатывает борьбой с паранормальным."
+	ru_names = list(
+        NOMINATIVE = "шлем Инквизитора"
+        GENITIVE = "шлема Инквизитора"
+        DATIVE = "шлему Инквизитора"
+        ACCUSATIVE = "шлем Инквизитора"
+        INSTRUMENTAL = "шлемом Инквизитора"
+        PREPOSITIONAL = "шлеме Инквизитора"
+	)
 	icon_state = "hardsuit0-inquisitor"
 	item_color = "inquisitor"
 
 /obj/item/clothing/suit/space/hardsuit/champion/inquisitor
 	name = "inquisitor's hardsuit"
-	desc = "Powerful wards are built into this hardsuit, protecting the user from all manner of paranormal threats."
+	desc = "Мощные охранные чары встроены в этот ИКС, защищая носителя от всего спектра паранормальных угроз"
+	ru_names = list(
+        NOMINATIVE = "ИКС Инквизитора"
+        GENITIVE = "ИКС Инквизитора"
+        DATIVE = "ИКС Инквизитора"
+        ACCUSATIVE = "ИКС Инквизитора"
+        INSTRUMENTAL = "ИКС Инквизитора"
+        PREPOSITIONAL = "ИКС Инквизитора"
+  )
 	icon_state = "hardsuit-inquisitor"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/champion/inquisitor
 
 /obj/item/clothing/suit/hooded/pathfinder
 	name = "pathfinder cloak"
-	desc = "A thick cloak woven from sinew and hides, designed to protect its wearer from hazardous weather."
+	desc = "Тяжелая мантия сшитая из сухожилий и шкур, предназначенная для защиты носителя от опасной погоды."
+	ru_names = list(
+        NOMINATIVE = "мантия первопроходца"
+        GENITIVE = "мантии первопроходца"
+        DATIVE = "мантии первопроходца"
+        ACCUSATIVE = "мантию первопроходца"
+        INSTRUMENTAL = "мантией первопроходца"
+        PREPOSITIONAL = "мантии первопроходца"
+	)
 	allowed = list(/obj/item/flashlight, /obj/item/tank/internals, /obj/item/pickaxe, /obj/item/twohanded/spear, /obj/item/organ/internal/regenerative_core/legion, /obj/item/kitchen/knife/combat/survival, /obj/item/twohanded/kinetic_crusher, /obj/item/hierophant_club, /obj/item/twohanded/fireaxe/boneaxe)
 	icon_state = "pathcloak"
 	item_state = "pathcloak"
@@ -312,6 +352,14 @@
 /obj/item/clothing/head/hooded/pathfinder
 	name = "pathfinder kasa"
 	desc = "A helmet crafted from bones and sinew meant to protect its wearer from hazardous weather."
+	ru_names = list(
+        NOMINATIVE = "каса первопроходца"
+        GENITIVE = "касы первопроходца"
+        DATIVE = "касе первопроходца"
+        ACCUSATIVE = "касу первопроходца"
+        INSTRUMENTAL = "касой первопроходца"
+        PREPOSITIONAL = "касе первопроходца"
+	)
 	icon_state = "pathhead"
 	item_state = "pathhead"
 	body_parts_covered = HEAD
