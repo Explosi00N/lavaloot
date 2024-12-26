@@ -260,12 +260,12 @@
 	name = "high dark templar's helmet"
 	desc = "Галактика принадлежит Императору..."
 	ru_names = list(
-        NOMINATIVE = "шлем высшего темного Тамплиера",
-        GENITIVE = "шлема высшего темного Тамплиера",
-        DATIVE = "шлему высшего темного Тамплиера",
-        ACCUSATIVE = "шлем высшего темного Тамплиера",
-        INSTRUMENTAL = "шлемом высшего темного Тамплиера",
-        PREPOSITIONAL = "шлеме высшего темного Тамплиера"
+        NOMINATIVE = "шлем высшего Чёрного Храмовника",
+        GENITIVE = "шлема высшего Чёрного Храмовника",
+        DATIVE = "шлему высшего Чёрного Храмовника",
+        ACCUSATIVE = "шлем высшего Чёрного Храмовника",
+        INSTRUMENTAL = "шлемом высшего Чёрного Храмовника",
+        PREPOSITIONAL = "шлеме высшего Чёрного Храмовника"
 	)
 	icon_state = "hardsuit0-hightemplar"
 	item_color = "hightemplar"
@@ -274,12 +274,12 @@
 	name = "high dark templar's hardsuit"
 	desc = "...и любой, кто оспаривает это — враг, которого необходимо уничтожить."
 	ru_names = list(
-        NOMINATIVE = "доспехи высшего темного Тамплиера",
-        GENITIVE = "доспехов высшего темного Тамплиера",
-        DATIVE = "доспехам высшего темного Тамплиера",
-        ACCUSATIVE = "доспехи высшего темного Тамплиера",
-        INSTRUMENTAL = "доспехами высшего темного Тамплиера",
-        PREPOSITIONAL = "доспехах высшего темного Тамплиера"
+        NOMINATIVE = "доспехи высшего Чёрного Храмовника",
+        GENITIVE = "доспехов высшего Чёрного Храмовника",
+        DATIVE = "доспехам высшего Чёрного Храмовника",
+        ACCUSATIVE = "доспехи высшего Чёрного Храмовника",
+        INSTRUMENTAL = "доспехами высшего Чёрного Храмовника",
+        PREPOSITIONAL = "доспехах высшего Чёрного Храмовника"
 	)
 	icon_state = "darktemplar-chaplain0"
 	item_color = "darktemplar-chaplain0"
@@ -287,7 +287,7 @@
 
 /obj/item/clothing/head/helmet/space/hardsuit/champion/inquisitor
 	name = "inquisitor's helmet"
-	desc = "Шлем носимый теми, кто на хлеб зарабатывает борьбой с паранормальным."
+	desc = "Шлем носимый теми, кто зарабатывает на хлеб борьбой с паранормальным."
 	ru_names = list(
         NOMINATIVE = "шлем инквизитора",
         GENITIVE = "шлема инквизитора",
@@ -303,12 +303,12 @@
 	name = "inquisitor's hardsuit"
 	desc = "На этот скафандр наложены мощные охранные чары, защищающие владельца от паранормальных угроз любого характера."
 	ru_names = list(
-        NOMINATIVE = "ИКС Инквизитора",
-        GENITIVE = "ИКС Инквизитора",
-        DATIVE = "ИКС Инквизитора",
-        ACCUSATIVE = "ИКС Инквизитора",
-        INSTRUMENTAL = "ИКС Инквизитора",
-        PREPOSITIONAL = "ИКС Инквизитора"
+        NOMINATIVE = "скафандр инквизитора",
+        GENITIVE = "скафандра инквизитора",
+        DATIVE = "скафандру инквизитора",
+        ACCUSATIVE = "скафандр инквизитора",
+        INSTRUMENTAL = "скафандром инквизитора",
+        PREPOSITIONAL = "скафандре инквизитора"
   )
 	icon_state = "hardsuit-inquisitor"
 	helmettype = /obj/item/clothing/head/helmet/space/hardsuit/champion/inquisitor
