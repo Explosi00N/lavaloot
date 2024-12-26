@@ -287,7 +287,7 @@
 
 /obj/item/clothing/head/helmet/space/hardsuit/champion/inquisitor
 	name = "inquisitor's helmet"
-	desc = "Шлем носимый теми, кто зарабатывает на хлеб борьбой с паранормальным."
+	desc = "Шлем, носимый теми, кто зарабатывает на хлеб борьбой с паранормальным."
 	ru_names = list(
         NOMINATIVE = "шлем инквизитора",
         GENITIVE = "шлема инквизитора",
