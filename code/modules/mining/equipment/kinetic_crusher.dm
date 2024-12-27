@@ -40,7 +40,7 @@
 	. += span_notice("Наносит <b>[force + detonation_damage + backstab_bonus]</b> урона вместо <b>[force + detonation_damage]</b>, если удар был нанесен в спину.")
 	for(var/t in trophies)
 		var/obj/item/crusher_trophy/T = t
-		. += "<span class='notice'>It has \a [T] attached, which causes [T.effect_desc()].</span>"
+		. += span_notice("К нему прикреплен [T], в связи с чем [T.effect_desc()].")
 
 
 /obj/item/twohanded/kinetic_crusher/attackby(obj/item/I, mob/user, params)
@@ -68,9 +68,9 @@
 
 /obj/item/twohanded/kinetic_crusher/attack(mob/living/target, mob/living/user, params, def_zone, skip_attack_anim = FALSE)
 	if(!HAS_TRAIT(src, TRAIT_WIELDED))
-		var/warn_message = "The [name] is too heavy to use with one hand."
+		var/warn_message = "[name] слишком тяжел, чтобы использовать его одной рукой."
 		if(user.drop_item_ground(src))
-			warn_message += " You fumble and drop it."
+			warn_message += "Вы роняете [name] на землю.."
 		to_chat(user, span_warning(warn_message))
 		return ATTACK_CHAIN_BLOCKED_ALL
 	var/datum/status_effect/crusher_damage/damage_track = target.has_status_effect(STATUS_EFFECT_CRUSHERDAMAGETRACKING)
@@ -213,7 +213,7 @@
 	var/target_turf = get_turf(target)
 	if(ismineralturf(target_turf))
 		if(isancientturf(target_turf))
-			visible_message("<span class='notice'>This rock appears to be resistant to all mining tools except pickaxes!</span>")
+			visible_message(span_notice("Похоже, что эта порода устойчива ко всем методам копания кроме кирок!")")
 		else
 			var/turf/simulated/mineral/M = target_turf
 			new /obj/effect/temp_visual/kinetic_blast(M)
@@ -223,7 +223,7 @@
 //trophies
 /obj/item/crusher_trophy
 	name = "tail spike"
-	desc = "A strange spike with no usage."
+	desc = "Странный шип без применений."
 	icon = 'icons/obj/lavaland/artefacts.dmi'
 	icon_state = "tail_spike"
 	var/bonus_value = 10 //if it has a bonus effect, this is how much that effect is
@@ -231,7 +231,7 @@
 
 /obj/item/crusher_trophy/examine(mob/living/user)
 	. = ..()
-	. += "<span class='notice'>Causes [effect_desc()] when attached to a kinetic crusher.</span>"
+	. += span_notice("Вызывает [effect_desc()], пока прикреплен к крушителю.")"
 
 /obj/item/crusher_trophy/proc/effect_desc()
 	return "errors"
@@ -249,7 +249,7 @@
 /obj/item/crusher_trophy/proc/add_to(obj/item/twohanded/kinetic_crusher/crusher, mob/living/user)
 	for(var/obj/item/crusher_trophy/crusher_trophy as anything in crusher.trophies)
 		if(istype(crusher_trophy, denied_type) || istype(src, crusher_trophy.denied_type))
-			to_chat(user, span_warning("You cannot attach [src] to [crusher]. Try to remove a few trophies first."))
+			balloon_alert("слишком много трофеев!")
 			return FALSE
 	if(loc == user)
 		if(!user.drop_transfer_item_to_loc(src, crusher))
@@ -276,7 +276,7 @@
 //goliath
 /obj/item/crusher_trophy/goliath_tentacle
 	name = "goliath tentacle"
-	desc = "A sliced-off goliath tentacle. Suitable as a trophy for a kinetic crusher."
+	desc = "Отрубленное щупальце голиафа. Может быть установлено как трофей крушителя."
 	icon_state = "goliath_tentacle"
 	denied_type = /obj/item/crusher_trophy/goliath_tentacle
 	bonus_value = 2
@@ -296,7 +296,7 @@
 //watcher
 /obj/item/crusher_trophy/watcher_wing
 	name = "watcher wing"
-	desc = "A wing ripped from a watcher. Suitable as a trophy for a kinetic crusher."
+	desc = "Оторванное крыло наблюдателя. Может быть установлено как трофей крушителя."
 	icon_state = "watcher_wing"
 	denied_type = /obj/item/crusher_trophy/watcher_wing
 	bonus_value = 5
@@ -316,7 +316,7 @@
 //magmawing watcher
 /obj/item/crusher_trophy/blaster_tubes/magma_wing
 	name = "magmawing watcher wing"
-	desc = "A still-searing wing from a magmawing watcher. Suitable as a trophy for a kinetic crusher."
+	desc = "Все еще пылающее крыло магмакрылого наблюдателя. Может быть установлено как трофей крушителя."
 	icon_state = "magma_wing"
 	gender = NEUTER
 	bonus_value = 5
@@ -335,14 +335,14 @@
 //icewing watcher
 /obj/item/crusher_trophy/watcher_wing/ice_wing
 	name = "icewing watcher wing"
-	desc = "A carefully preserved frozen wing from an icewing watcher. Suitable as a trophy for a kinetic crusher."
+	desc = "Хрупкое, замороженное крыло ледокрылого наблюдателя. Может быть установлено как трофей крушителя."
 	icon_state = "ice_wing"
 	bonus_value = 8
 
 //legion
 /obj/item/crusher_trophy/legion_skull
 	name = "legion skull"
-	desc = "A dead and lifeless legion skull. Suitable as a trophy for a kinetic crusher."
+	desc = "Разбитый, безжизненный череп легиона. Может быть установлено как трофей крушителя."
 	icon_state = "legion_skull"
 	denied_type = /obj/item/crusher_trophy/legion_skull
 	bonus_value = 3
@@ -363,7 +363,7 @@
 /// Massive eyed tentacle
 /obj/item/crusher_trophy/eyed_tentacle
 	name = "Massive eyed tentacle"
-	desc = "Большое и глазастое щупальце древнего голиафа. Может быть установлено как трофей крашера."
+	desc = "Большое и глазастое щупальце древнего голиафа. Может быть установлено как трофей крушителя."
 	icon_state = "ancient_goliath_tentacle"
 	denied_type = /obj/item/crusher_trophy/eyed_tentacle
 	bonus_value = 1
@@ -385,7 +385,7 @@
 /// Poison fang
 /obj/item/crusher_trophy/fang
 	name = "Poison fang"
-	desc = "Уродливый и отравленный коготь. Может быть установлен как трофей крашера."
+	desc = "Уродливый и отравленный клык. Может быть установлен как трофей крушителя."
 	icon_state = "ob_gniga"
 	denied_type = /obj/item/crusher_trophy/fang
 	bonus_value = 1.1
@@ -399,7 +399,7 @@
 /// Frost gland
 /obj/item/crusher_trophy/gland
 	name = "Frost gland"
-	desc = "Замороженная железа. Может быть установлена как трофей крашера."
+	desc = "Замороженная железа. Может быть установлена как трофей крушителя."
 	icon_state = "ice_gniga"
 	denied_type = /obj/item/crusher_trophy/gland
 	bonus_value = 0.9
@@ -427,7 +427,7 @@
 //blood-drunk hunter
 /obj/item/crusher_trophy/miner_eye
 	name = "eye of a blood-drunk hunter"
-	desc = "Its pupil is collapsed and turned to mush. Suitable as a trophy for a kinetic crusher."
+	desc = "Его зрачок раздроблен в кашу. Может быть установлено как трофей крушителя."
 	icon_state = "hunter_eye"
 	denied_type = /obj/item/crusher_trophy/miner_eye
 
@@ -439,7 +439,7 @@
 
 //ash drake
 /obj/item/crusher_trophy/tail_spike
-	desc = "A spike taken from an ash drake's tail. Suitable as a trophy for a kinetic crusher."
+	desc = "Шип, срезанный с хвоста пепельного дрейка. Может быть установлено как трофей крушителя."
 	denied_type = /obj/item/crusher_trophy/tail_spike
 	bonus_value = 5
 
@@ -462,7 +462,7 @@
 //bubblegum
 /obj/item/crusher_trophy/demon_claws
 	name = "demon claws"
-	desc = "A set of blood-drenched claws from a massive demon's hand. Suitable as a trophy for a kinetic crusher."
+	desc = "Набор окровавленных когтей вырванных с руки огромного демона. Может быть установлено как трофей крушителя."
 	icon_state = "demon_claws"
 	gender = PLURAL
 	denied_type = /obj/item/crusher_trophy/demon_claws
@@ -498,7 +498,7 @@
 //colossus
 /obj/item/crusher_trophy/blaster_tubes
 	name = "blaster tubes"
-	desc = "The blaster tubes from a colossus's arm. Suitable as a trophy for a kinetic crusher."
+	desc = "Бластерные трубки, забранные с руки колосса. Может быть установлено как трофей крушителя."
 	icon_state = "blaster_tubes"
 	gender = PLURAL
 	denied_type = /obj/item/crusher_trophy/blaster_tubes
@@ -527,7 +527,7 @@
 //hierophant
 /obj/item/crusher_trophy/vortex_talisman
 	name = "vortex talisman"
-	desc = "A glowing trinket that was originally the Hierophant's beacon. Suitable as a trophy for a kinetic crusher."
+	desc = "Мерцающий талисман, ранее бывший маяком Иерофанта. Может быть установлено как трофей крушителя."
 	icon_state = "vortex_talisman"
 	denied_type = /obj/item/crusher_trophy/vortex_talisman
 
@@ -544,7 +544,7 @@
 //vetus
 /obj/item/crusher_trophy/adaptive_intelligence_core
 	name = "adaptive intelligence core"
-	desc = "Seems to be one of the cores from a massive robot. Suitable as a trophy for a kinetic crusher."
+	desc = "Кажется, это одно из ядер огромного робота. Может быть установлено как трофей крушителя."
 	icon_state = "adaptive_core"
 	denied_type = /obj/item/crusher_trophy/adaptive_intelligence_core
 	bonus_value = 2
@@ -566,7 +566,7 @@
 
 /obj/item/crusher_trophy/empowered_legion_skull
 	name = "empowered legion skull"
-	desc = "A powerful looking skull with glowing red eyes."
+	desc = "Мощно выглядящий череп с горящими красными глазами."
 	icon_state = "ashen_skull"
 	denied_type = /obj/item/crusher_trophy/empowered_legion_skull
 
