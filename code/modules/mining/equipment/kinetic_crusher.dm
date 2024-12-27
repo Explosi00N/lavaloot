@@ -4,8 +4,7 @@
 	icon_state = "crusher"
 	item_state = "crusher0"
 	name = "proto-kinetic crusher"
-	desc = "An early design of the proto-kinetic accelerator, it is little more than a combination of various mining tools cobbled together, forming a high-tech club. \
-	While it is an effective mining tool, it did little to aid any but the most skilled and/or suicidal miners against local fauna."
+	desc = "Ранний дизайн прото-кинетического акселератора, лишь немногим отличающийся от кучи различных шахтёрских иструментов прибитых друг к другу, формирующих высокотехнологичный топор. \ Хоть это и является эффективным шахтерским инструментом, с локальной фауной он поможет только самым опытным и/или сумашедшим шахтёрам."
 	force = 0 //You can't hit stuff unless wielded
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
@@ -16,7 +15,7 @@
 	armour_penetration = 10
 	materials = list(MAT_METAL = 1150, MAT_GLASS = 2075)
 	hitsound = 'sound/weapons/bladeslice.ogg'
-	attack_verb = list("smashed", "crushed", "cleaved", "chopped", "pulped")
+	attack_verb = list("разрубил", "раздробил", "порубил", "подбил")
 	sharp = TRUE
 	actions_types = list(/datum/action/item_action/toggle_light)
 	var/list/trophies = list()
@@ -37,8 +36,8 @@
 
 /obj/item/twohanded/kinetic_crusher/examine(mob/living/user)
 	. = ..()
-	. += "<span class='notice'>Mark a large creature with the destabilizing force, then hit them in melee to do <b>[force + detonation_damage]</b> damage.</span>"
-	. += "<span class='notice'>Does <b>[force + detonation_damage + backstab_bonus]</b> damage if the target is backstabbed, instead of <b>[force + detonation_damage]</b>.</span>"
+	. += span_notice("Отметьте существо дестабилизирующим полем, затем нанесите удар в ближнем бою чтобы нанести <b>[force + detonation_damage]</b> урона.")
+	. += span_notice("Наносит <b>[force + detonation_damage + backstab_bonus]</b> урона вместо <b>[force + detonation_damage]</b>, если удар был нанесен в спину.")
 	for(var/t in trophies)
 		var/obj/item/crusher_trophy/T = t
 		. += "<span class='notice'>It has \a [T] attached, which causes [T.effect_desc()].</span>"
