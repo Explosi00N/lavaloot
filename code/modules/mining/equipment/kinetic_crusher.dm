@@ -5,6 +5,14 @@
 	item_state = "crusher0"
 	name = "proto-kinetic crusher"
 	desc = "Ранний дизайн прото-кинетического акселератора, лишь немногим отличающийся от кучи различных шахтёрских иструментов прибитых друг к другу, формирующих высокотехнологичный топор. \ Хоть это и является эффективным шахтерским инструментом, с локальной фауной он поможет только самым опытным и/или сумашедшим шахтёрам."
+	ru_names = list(
+        NOMINATIVE = "прото-кинетический крушитель",
+        GENITIVE = "прото-кинетического крушителя",
+        DATIVE = "прото-кинетическому крушителю",
+        ACCUSATIVE = "прото-кинетический крушитель",
+        INSTRUMENTAL = "прото-кинетическим крушителем",
+        PREPOSITIONAL = "прото-кинетическом крушителе"
+	)
 	force = 0 //You can't hit stuff unless wielded
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
@@ -277,6 +285,14 @@
 /obj/item/crusher_trophy/goliath_tentacle
 	name = "goliath tentacle"
 	desc = "Отрубленное щупальце голиафа. Может быть установлено как трофей крушителя."
+	ru_names = list(
+        NOMINATIVE = "щупальце голиафа",
+        GENITIVE = "щупальца голиафа",
+        DATIVE = "щупальцу голиафа",
+        ACCUSATIVE = "щупальце голиафа",
+        INSTRUMENTAL = "щупальцем голиафа",
+        PREPOSITIONAL = "щупальце голиафа"
+	)
 	icon_state = "goliath_tentacle"
 	denied_type = /obj/item/crusher_trophy/goliath_tentacle
 	bonus_value = 2
@@ -297,6 +313,14 @@
 /obj/item/crusher_trophy/watcher_wing
 	name = "watcher wing"
 	desc = "Оторванное крыло наблюдателя. Может быть установлено как трофей крушителя."
+	ru_names = list(
+        NOMINATIVE = "крыло наблюдателя",
+        GENITIVE = "крыла наблюдателя",
+        DATIVE = "крылу наблюдателя",
+        ACCUSATIVE = "крыло наблюдателя",
+        INSTRUMENTAL = "крылом наблюдателя",
+        PREPOSITIONAL = "крыле наблюдателя"
+	)
 	icon_state = "watcher_wing"
 	denied_type = /obj/item/crusher_trophy/watcher_wing
 	bonus_value = 5
@@ -317,6 +341,14 @@
 /obj/item/crusher_trophy/blaster_tubes/magma_wing
 	name = "magmawing watcher wing"
 	desc = "Все еще пылающее крыло магмакрылого наблюдателя. Может быть установлено как трофей крушителя."
+	ru_names = list(
+        NOMINATIVE = "крыло магмакрылого наблюдателя",
+        GENITIVE = "крыла магмакрылого наблюдателя",
+        DATIVE = "крылу магмакрылого наблюдателя",
+        ACCUSATIVE = "крыло магмакрылого наблюдателя",
+        INSTRUMENTAL = "крылом магмакрылого наблюдателя",
+        PREPOSITIONAL = "крыле магмакрылого наблюдателя"
+	)
 	icon_state = "magma_wing"
 	gender = NEUTER
 	bonus_value = 5
@@ -336,6 +368,14 @@
 /obj/item/crusher_trophy/watcher_wing/ice_wing
 	name = "icewing watcher wing"
 	desc = "Хрупкое, замороженное крыло ледокрылого наблюдателя. Может быть установлено как трофей крушителя."
+	ru_names = list(
+        NOMINATIVE = "крыло ледокрылого наблюдателя",
+        GENITIVE = "крыла ледокрылого наблюдателя",
+        DATIVE = "крылу ледокрылого наблюдателя",
+        ACCUSATIVE = "крыло ледокрылого наблюдателя",
+        INSTRUMENTAL = "крылом ледокрылого наблюдателя",
+        PREPOSITIONAL = "крыле ледокрылого наблюдателя"
+	)
 	icon_state = "ice_wing"
 	bonus_value = 8
 
@@ -343,6 +383,14 @@
 /obj/item/crusher_trophy/legion_skull
 	name = "legion skull"
 	desc = "Разбитый, безжизненный череп легиона. Может быть установлен как трофей крушителя."
+	ru_names = list(
+        NOMINATIVE = "",
+        GENITIVE = "",
+        DATIVE = "",
+        ACCUSATIVE = "",
+        INSTRUMENTAL = "",
+        PREPOSITIONAL = ""
+	)
 	icon_state = "legion_skull"
 	denied_type = /obj/item/crusher_trophy/legion_skull
 	bonus_value = 3
@@ -364,6 +412,14 @@
 /obj/item/crusher_trophy/eyed_tentacle
 	name = "Massive eyed tentacle"
 	desc = "Большое и глазастое щупальце древнего голиафа. Может быть установлено как трофей крушителя."
+	ru_names = list(
+        NOMINATIVE = "",
+        GENITIVE = "",
+        DATIVE = "",
+        ACCUSATIVE = "",
+        INSTRUMENTAL = "",
+        PREPOSITIONAL = ""
+	)
 	icon_state = "ancient_goliath_tentacle"
 	denied_type = /obj/item/crusher_trophy/eyed_tentacle
 	bonus_value = 1
@@ -386,6 +442,14 @@
 /obj/item/crusher_trophy/fang
 	name = "Poison fang"
 	desc = "Уродливый и отравленный клык. Может быть установлен как трофей крушителя."
+	ru_names = list(
+        NOMINATIVE = "",
+        GENITIVE = "",
+        DATIVE = "",
+        ACCUSATIVE = "",
+        INSTRUMENTAL = "",
+        PREPOSITIONAL = ""
+	)
 	icon_state = "ob_gniga"
 	denied_type = /obj/item/crusher_trophy/fang
 	bonus_value = 1.1
@@ -400,6 +464,14 @@
 /obj/item/crusher_trophy/gland
 	name = "Frost gland"
 	desc = "Замороженная железа. Может быть установлена как трофей крушителя."
+	ru_names = list(
+        NOMINATIVE = "",
+        GENITIVE = "",
+        DATIVE = "",
+        ACCUSATIVE = "",
+        INSTRUMENTAL = "",
+        PREPOSITIONAL = ""
+	)
 	icon_state = "ice_gniga"
 	denied_type = /obj/item/crusher_trophy/gland
 	bonus_value = 0.9
@@ -428,6 +500,14 @@
 /obj/item/crusher_trophy/miner_eye
 	name = "eye of a blood-drunk hunter"
 	desc = "Его зрачок раздроблен в кашу. Может быть установлено как трофей крушителя."
+	ru_names = list(
+        NOMINATIVE = "",
+        GENITIVE = "",
+        DATIVE = "",
+        ACCUSATIVE = "",
+        INSTRUMENTAL = "",
+        PREPOSITIONAL = ""
+	)
 	icon_state = "hunter_eye"
 	denied_type = /obj/item/crusher_trophy/miner_eye
 
@@ -440,11 +520,19 @@
 //ash drake
 /obj/item/crusher_trophy/tail_spike
 	desc = "Шип, срезанный с хвоста пепельного дрейка. Может быть установлено как трофей крушителя."
+	ru_names = list(
+        NOMINATIVE = "",
+        GENITIVE = "",
+        DATIVE = "",
+        ACCUSATIVE = "",
+        INSTRUMENTAL = "",
+        PREPOSITIONAL = ""
+	)
 	denied_type = /obj/item/crusher_trophy/tail_spike
 	bonus_value = 5
 
 /obj/item/crusher_trophy/tail_spike/effect_desc()
-	return "детонация метки дестабилизатора взрывает врага огнем, нанося <b>[bonus_value]</b> урона близлежащим врагам и отталкивая их"
+	return "детонация метки дестабилизатора взрывает врага, нанося <b>[bonus_value]</b> урона близлежащим врагам и отталкивая их"
 
 /obj/item/crusher_trophy/tail_spike/on_mark_detonation(mob/living/target, mob/living/user)
 	for(var/mob/living/L in oview(2, user))
@@ -463,6 +551,14 @@
 /obj/item/crusher_trophy/demon_claws
 	name = "demon claws"
 	desc = "Набор окровавленных когтей вырванных с руки огромного демона. Может быть установлено как трофей крушителя."
+	ru_names = list(
+        NOMINATIVE = "",
+        GENITIVE = "",
+        DATIVE = "",
+        ACCUSATIVE = "",
+        INSTRUMENTAL = "",
+        PREPOSITIONAL = ""
+	)
 	icon_state = "demon_claws"
 	gender = PLURAL
 	denied_type = /obj/item/crusher_trophy/demon_claws
@@ -499,6 +595,14 @@
 /obj/item/crusher_trophy/blaster_tubes
 	name = "blaster tubes"
 	desc = "Бластерные трубки, забранные с руки колосса. Может быть установлено как трофей крушителя."
+	ru_names = list(
+        NOMINATIVE = "",
+        GENITIVE = "",
+        DATIVE = "",
+        ACCUSATIVE = "",
+        INSTRUMENTAL = "",
+        PREPOSITIONAL = ""
+	)
 	icon_state = "blaster_tubes"
 	gender = PLURAL
 	denied_type = /obj/item/crusher_trophy/blaster_tubes
@@ -528,6 +632,14 @@
 /obj/item/crusher_trophy/vortex_talisman
 	name = "vortex talisman"
 	desc = "Мерцающий талисман, ранее бывший маяком Иерофанта. Может быть установлено как трофей крушителя."
+	ru_names = list(
+        NOMINATIVE = "",
+        GENITIVE = "",
+        DATIVE = "",
+        ACCUSATIVE = "",
+        INSTRUMENTAL = "",
+        PREPOSITIONAL = ""
+	)
 	icon_state = "vortex_talisman"
 	denied_type = /obj/item/crusher_trophy/vortex_talisman
 
@@ -545,6 +657,14 @@
 /obj/item/crusher_trophy/adaptive_intelligence_core
 	name = "adaptive intelligence core"
 	desc = "Кажется, это одно из ядер огромного робота. Может быть установлено как трофей крушителя."
+	ru_names = list(
+        NOMINATIVE = "",
+        GENITIVE = "",
+        DATIVE = "",
+        ACCUSATIVE = "",
+        INSTRUMENTAL = "",
+        PREPOSITIONAL = ""
+	)
 	icon_state = "adaptive_core"
 	denied_type = /obj/item/crusher_trophy/adaptive_intelligence_core
 	bonus_value = 2
@@ -567,11 +687,19 @@
 /obj/item/crusher_trophy/empowered_legion_skull
 	name = "empowered legion skull"
 	desc = "Устрашающий череп с горящими красными глазами."
+	ru_names = list(
+        NOMINATIVE = "",
+        GENITIVE = "",
+        DATIVE = "",
+        ACCUSATIVE = "",
+        INSTRUMENTAL = "",
+        PREPOSITIONAL = ""
+	)
 	icon_state = "ashen_skull"
 	denied_type = /obj/item/crusher_trophy/empowered_legion_skull
 
 /obj/item/crusher_trophy/empowered_legion_skull/effect_desc()
-	return "детонация метки дестабилизатора позволяет вам сделать рывок на небольшую дистанцию в интенте помощи"
+	return "детонация метки дестабилизатора позволяет вам сделать рывок на небольшую дистанцию в намерении помощи"
 
 /obj/item/crusher_trophy/empowered_legion_skull/on_mark_detonation(mob/living/target, mob/living/user)
 	user.apply_status_effect(STATUS_EFFECT_DASH)
