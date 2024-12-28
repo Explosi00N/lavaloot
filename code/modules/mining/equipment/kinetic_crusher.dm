@@ -231,7 +231,7 @@
 
 /obj/item/crusher_trophy/examine(mob/living/user)
 	. = ..()
-	. += span_notice("Вызывает [effect_desc()], пока прикреплен к крушителю.")"
+	. += span_notice("Вызывает следующий эффект, пока прикреплен к крушителю: [effect_desc()].")"
 
 /obj/item/crusher_trophy/proc/effect_desc()
 	return "errors"
@@ -257,7 +257,7 @@
 	else
 		forceMove(crusher)
 	crusher.trophies += src
-	to_chat(user, span_notice("You have attached [src] to [crusher]."))
+	balloon_alert(user, "трофей прикреплен")
 	return TRUE
 
 /obj/item/crusher_trophy/proc/remove_from(obj/item/twohanded/kinetic_crusher/H, mob/living/user)
@@ -284,7 +284,7 @@
 	var/missing_health_desc = 10
 
 /obj/item/crusher_trophy/goliath_tentacle/effect_desc()
-	return "mark detonation to do <b>[bonus_value]</b> more damage for every <b>[missing_health_desc]</b> health you are missing"
+	return "детонация метки дестабилизатора наносит на <b>[bonus_value]</b> больше урона за каждые <b>[missing_health_desc]</b> недостающего у вас здоровья"
 
 /obj/item/crusher_trophy/goliath_tentacle/on_mark_detonation(mob/living/target, mob/living/user)
 	var/missing_health = user.health - user.maxHealth
@@ -302,7 +302,7 @@
 	bonus_value = 5
 
 /obj/item/crusher_trophy/watcher_wing/effect_desc()
-	return "mark detonation to prevent certain creatures from using certain attacks for <b>[bonus_value*0.1]</b> second\s"
+	return "детонация метки дестабилизатора не позволяет некоторым существам использовать дальнобойные атаки в течении <b>[bonus_value*0.1]</b> секунд"
 
 /obj/item/crusher_trophy/watcher_wing/on_mark_detonation(mob/living/target, mob/living/user)
 	if(ishostile(target))
@@ -322,7 +322,7 @@
 	bonus_value = 5
 
 /obj/item/crusher_trophy/blaster_tubes/magma_wing/effect_desc()
-	return "mark detonation to make the next destabilizer shot deal <b>[bonus_value]</b> damage"
+	return "детонация метки дестабилизатора позволяет следующему выстрелу дестабилизатора нанести <b>[bonus_value]</b> урона"
 
 /obj/item/crusher_trophy/blaster_tubes/magma_wing/on_projectile_fire(obj/item/projectile/destabilizer/marker, mob/living/user)
 	if(deadly_shot)
@@ -342,13 +342,13 @@
 //legion
 /obj/item/crusher_trophy/legion_skull
 	name = "legion skull"
-	desc = "Разбитый, безжизненный череп легиона. Может быть установлено как трофей крушителя."
+	desc = "Разбитый, безжизненный череп легиона. Может быть установлен как трофей крушителя."
 	icon_state = "legion_skull"
 	denied_type = /obj/item/crusher_trophy/legion_skull
 	bonus_value = 3
 
 /obj/item/crusher_trophy/legion_skull/effect_desc()
-	return "a kinetic crusher to recharge <b>[bonus_value*0.1]</b> second\s faster"
+	return "выстрел дестабилизатора перезаряжается на <b>[bonus_value*0.1]</b> секунды быстрее"
 
 /obj/item/crusher_trophy/legion_skull/add_to(obj/item/twohanded/kinetic_crusher/H, mob/living/user)
 	. = ..()
@@ -369,7 +369,7 @@
 	bonus_value = 1
 
 /obj/item/crusher_trophy/eyed_tentacle/effect_desc()
-	return "causes kinetic crusher to deal 50% more damage if target has more than 90% HP"
+	return "крушитель наносит на 50% больше урона, если у цели больше 90% здоровья."
 
 /obj/item/crusher_trophy/eyed_tentacle/on_melee_hit(mob/living/target, mob/living/user)
 	var/procent = (target.health / target.maxHealth) * 100
@@ -391,7 +391,7 @@
 	bonus_value = 1.1
 
 /obj/item/crusher_trophy/fang/effect_desc()
-	return "causes fauna to get 10% more damage after mark destroyed for 2 seconds"
+	return "фауна получает на 10% больше урона в течении 2 секунд после детонации"
 
 /obj/item/crusher_trophy/fang/on_mark_detonation(mob/living/target, mob/living/user)
 	target.apply_status_effect(STATUS_EFFECT_FANG_EXHAUSTION, bonus_value)
@@ -405,7 +405,7 @@
 	bonus_value = 0.9
 
 /obj/item/crusher_trophy/gland/effect_desc()
-	return "causes fauna to deal 10% less damage when marked"
+	return "фауна наносит на 10% меньше урона, пока на неё установлена метка дестабилизатора"
 
 /obj/item/crusher_trophy/gland/on_mark_application(mob/living/simple_animal/target, datum/status_effect/crusher_mark/mark, had_mark)
 	if(had_mark)
@@ -432,7 +432,7 @@
 	denied_type = /obj/item/crusher_trophy/miner_eye
 
 /obj/item/crusher_trophy/miner_eye/effect_desc()
-	return "mark detonation to grant stun immunity and <b>90%</b> damage reduction for <b>1</b> second"
+	return "детонация метки дестабилизатора дает вам иммунитет к оглушению и уменьшение получаемого урона на <b>90%</b>, на <b>1</b> секунду"
 
 /obj/item/crusher_trophy/miner_eye/on_mark_detonation(mob/living/target, mob/living/user)
 	user.apply_status_effect(STATUS_EFFECT_BLOODDRUNK)
@@ -444,7 +444,7 @@
 	bonus_value = 5
 
 /obj/item/crusher_trophy/tail_spike/effect_desc()
-	return "mark detonation to do <b>[bonus_value]</b> damage to nearby creatures and push them back"
+	return "детонация метки дестабилизатора взрывает врага огнем, нанося <b>[bonus_value]</b> урона близлежащим врагам и отталкивая их"
 
 /obj/item/crusher_trophy/tail_spike/on_mark_detonation(mob/living/target, mob/living/user)
 	for(var/mob/living/L in oview(2, user))
@@ -470,7 +470,7 @@
 	var/static/list/damage_heal_order = list(BRUTE, BURN, OXY)
 
 /obj/item/crusher_trophy/demon_claws/effect_desc()
-	return "melee hits to do <b>[bonus_value * 0.2]</b> more damage and heal you for <b>[bonus_value * 0.1]</b>, with <b>5X</b> effect on mark detonation"
+	return "удары в ближнем бою наносят на <b>[bonus_value * 0.2]</b> больше урона и лечат вас на <b>[bonus_value * 0.1]</b> здоровья, с пятерным эффектом при детонации метки"
 
 /obj/item/crusher_trophy/demon_claws/add_to(obj/item/twohanded/kinetic_crusher/H, mob/living/user)
 	. = ..()
@@ -506,7 +506,7 @@
 	var/deadly_shot = FALSE
 
 /obj/item/crusher_trophy/blaster_tubes/effect_desc()
-	return "mark detonation to make the next destabilizer shot deal <b>[bonus_value]</b> damage but move slower"
+	return "выстрел дестабилизатора после детонации метки дестабилизатора наносит <b>[bonus_value]</b> урона, но двигается медленнее"
 
 /obj/item/crusher_trophy/blaster_tubes/on_projectile_fire(obj/item/projectile/destabilizer/marker, mob/living/user)
 	if(deadly_shot)
@@ -532,7 +532,7 @@
 	denied_type = /obj/item/crusher_trophy/vortex_talisman
 
 /obj/item/crusher_trophy/vortex_talisman/effect_desc()
-	return "mark detonation to create a homing hierophant chaser" //Wall was way too cheesy and allowed miners to be nearly invincible while dumb mob AI just rubbed its face on the wall.
+	return "детонация метки дестабилизатора призывает самонаводящуюся гончую Иерофанта" //Wall was way too cheesy and allowed miners to be nearly invincible while dumb mob AI just rubbed its face on the wall.
 
 /obj/item/crusher_trophy/vortex_talisman/on_mark_detonation(mob/living/target, mob/living/user)
 	if(isliving(target))
@@ -550,7 +550,7 @@
 	bonus_value = 2
 
 /obj/item/crusher_trophy/adaptive_intelligence_core/effect_desc()
-	return "melee hits deal <b>[bonus_value]</b> more damage per hit after hitting a target, up to <b>[bonus_value * 10]</b> extra damage to that target"
+	return "удары в ближнем бою наносят на <b>[bonus_value]</b> больше урона после атаки по противнику, с пределом в <b>[bonus_value * 10]</b> урона"
 
 /obj/item/crusher_trophy/adaptive_intelligence_core/add_to(obj/item/twohanded/kinetic_crusher/H, mob/living/user)
 	. = ..()
@@ -566,12 +566,12 @@
 
 /obj/item/crusher_trophy/empowered_legion_skull
 	name = "empowered legion skull"
-	desc = "Мощно выглядящий череп с горящими красными глазами."
+	desc = "Устрашающий череп с горящими красными глазами."
 	icon_state = "ashen_skull"
 	denied_type = /obj/item/crusher_trophy/empowered_legion_skull
 
 /obj/item/crusher_trophy/empowered_legion_skull/effect_desc()
-	return "mark detonation grants the ability to dash a short distance on help intent"
+	return "детонация метки дестабилизатора позволяет вам сделать рывок на небольшую дистанцию в интенте помощи"
 
 /obj/item/crusher_trophy/empowered_legion_skull/on_mark_detonation(mob/living/target, mob/living/user)
 	user.apply_status_effect(STATUS_EFFECT_DASH)
