@@ -213,7 +213,7 @@
 	var/target_turf = get_turf(target)
 	if(ismineralturf(target_turf))
 		if(isancientturf(target_turf))
-			visible_message(span_notice("Похоже, что эта порода устойчива ко всем методам копания кроме кирок!")")
+			visible_message(span_notice("Похоже, что эта порода устойчива ко всем методам копания кроме кирок!"))
 		else
 			var/turf/simulated/mineral/M = target_turf
 			new /obj/effect/temp_visual/kinetic_blast(M)
@@ -231,7 +231,7 @@
 
 /obj/item/crusher_trophy/examine(mob/living/user)
 	. = ..()
-	. += span_notice("Вызывает следующий эффект, пока прикреплен к крушителю: [effect_desc()].")"
+	. += span_notice("Вызывает следующий эффект, пока прикреплен к крушителю: [effect_desc()].")
 
 /obj/item/crusher_trophy/proc/effect_desc()
 	return "errors"
