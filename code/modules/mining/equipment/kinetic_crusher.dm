@@ -23,7 +23,7 @@
 	armour_penetration = 10
 	materials = list(MAT_METAL = 1150, MAT_GLASS = 2075)
 	hitsound = 'sound/weapons/bladeslice.ogg'
-	attack_verb = list("разрубил", "раздробил", "порубил", "подбил")
+	attack_verb = list("smashed", "crushed", "cleaved", "chopped", "pulped")
 	sharp = TRUE
 	actions_types = list(/datum/action/item_action/toggle_light)
 	var/list/trophies = list()
@@ -48,7 +48,7 @@
 	. += span_notice("Наносит <b>[force + detonation_damage + backstab_bonus]</b> урона вместо <b>[force + detonation_damage]</b>, если удар был нанесен в спину.")
 	for(var/t in trophies)
 		var/obj/item/crusher_trophy/T = t
-		. += span_notice("К нему прикреплен [T], в связи с чем [T.effect_desc()].")
+		. += span_notice("К нему прикреплен [T], вызывая следующий эффект: [T.effect_desc()].")
 
 
 /obj/item/twohanded/kinetic_crusher/attackby(obj/item/I, mob/user, params)
@@ -113,7 +113,7 @@
 			playsound(src, 'sound/effects/stealthoff.ogg', 50, 1, 1)
 			user.visible_message(span_warning("[user] делает рывок!"))
 		else
-			to_chat(user, "<span class='warning'>Something prevents you from dashing!</span>")
+			to_chat(user, span_warning("Что-то не дает вам совершить рывок!"))
 		user.remove_status_effect(STATUS_EFFECT_DASH)
 		return
 	if(!proximity_flag && charged)//Mark a target, or mine a tile.
@@ -300,7 +300,7 @@
 	var/missing_health_desc = 10
 
 /obj/item/crusher_trophy/goliath_tentacle/effect_desc()
-	return "детонация метки дестабилизатора наносит на <b>[bonus_value]</b> больше урона за каждые <b>[missing_health_desc]</b> недостающего у вас здоровья"
+	return "Детонация метки дестабилизатора наносит на <b>[bonus_value]</b> больше урона за каждые <b>[missing_health_desc]</b> недостающего у вас здоровья"
 
 /obj/item/crusher_trophy/goliath_tentacle/on_mark_detonation(mob/living/target, mob/living/user)
 	var/missing_health = user.health - user.maxHealth
@@ -326,7 +326,7 @@
 	bonus_value = 5
 
 /obj/item/crusher_trophy/watcher_wing/effect_desc()
-	return "детонация метки дестабилизатора не позволяет некоторым существам использовать дальнобойные атаки в течении <b>[bonus_value*0.1]</b> секунд"
+	return "Детонация метки дестабилизатора не позволяет некоторым существам использовать дальнобойные атаки в течении <b>[bonus_value*0.1]</b> секунд"
 
 /obj/item/crusher_trophy/watcher_wing/on_mark_detonation(mob/living/target, mob/living/user)
 	if(ishostile(target))
@@ -354,7 +354,7 @@
 	bonus_value = 5
 
 /obj/item/crusher_trophy/blaster_tubes/magma_wing/effect_desc()
-	return "детонация метки дестабилизатора позволяет следующему выстрелу дестабилизатора нанести <b>[bonus_value]</b> урона"
+	return "Детонация метки дестабилизатора позволяет следующему выстрелу дестабилизатора нанести <b>[bonus_value]</b> урона"
 
 /obj/item/crusher_trophy/blaster_tubes/magma_wing/on_projectile_fire(obj/item/projectile/destabilizer/marker, mob/living/user)
 	if(deadly_shot)
@@ -396,7 +396,7 @@
 	bonus_value = 3
 
 /obj/item/crusher_trophy/legion_skull/effect_desc()
-	return "выстрел дестабилизатора перезаряжается на <b>[bonus_value*0.1]</b> секунды быстрее"
+	return "Выстрел дестабилизатора перезаряжается на <b>[bonus_value*0.1]</b> секунды быстрее"
 
 /obj/item/crusher_trophy/legion_skull/add_to(obj/item/twohanded/kinetic_crusher/H, mob/living/user)
 	. = ..()
@@ -413,19 +413,19 @@
 	name = "Massive eyed tentacle"
 	desc = "Большое и глазастое щупальце древнего голиафа. Может быть установлено как трофей крушителя."
 	ru_names = list(
-        NOMINATIVE = "",
-        GENITIVE = "",
-        DATIVE = "",
-        ACCUSATIVE = "",
-        INSTRUMENTAL = "",
-        PREPOSITIONAL = ""
+        NOMINATIVE = "огромное щупальце голиафа",
+        GENITIVE = "огромного щупальца голиафа",
+        DATIVE = "огромному щупальцу голиафа",
+        ACCUSATIVE = "огромное щупальце голиафа",
+        INSTRUMENTAL = "огромным щупальцем голиафа",
+        PREPOSITIONAL = "огромном щупальце голиафа"
 	)
 	icon_state = "ancient_goliath_tentacle"
 	denied_type = /obj/item/crusher_trophy/eyed_tentacle
 	bonus_value = 1
 
 /obj/item/crusher_trophy/eyed_tentacle/effect_desc()
-	return "крушитель наносит на 50% больше урона, если у цели больше 90% здоровья."
+	return "Крушитель наносит на 50% больше урона, если у цели больше 90% здоровья."
 
 /obj/item/crusher_trophy/eyed_tentacle/on_melee_hit(mob/living/target, mob/living/user)
 	var/procent = (target.health / target.maxHealth) * 100
@@ -455,7 +455,7 @@
 	bonus_value = 1.1
 
 /obj/item/crusher_trophy/fang/effect_desc()
-	return "фауна получает на 10% больше урона в течении 2 секунд после детонации"
+	return "Фауна получает на 10% больше урона в течении 2 секунд после детонации"
 
 /obj/item/crusher_trophy/fang/on_mark_detonation(mob/living/target, mob/living/user)
 	target.apply_status_effect(STATUS_EFFECT_FANG_EXHAUSTION, bonus_value)
@@ -477,7 +477,7 @@
 	bonus_value = 0.9
 
 /obj/item/crusher_trophy/gland/effect_desc()
-	return "фауна наносит на 10% меньше урона, пока на неё установлена метка дестабилизатора"
+	return "Фауна наносит на 10% меньше урона, пока на неё установлена метка дестабилизатора"
 
 /obj/item/crusher_trophy/gland/on_mark_application(mob/living/simple_animal/target, datum/status_effect/crusher_mark/mark, had_mark)
 	if(had_mark)
@@ -512,7 +512,7 @@
 	denied_type = /obj/item/crusher_trophy/miner_eye
 
 /obj/item/crusher_trophy/miner_eye/effect_desc()
-	return "детонация метки дестабилизатора дает вам иммунитет к оглушению и уменьшение получаемого урона на <b>90%</b>, на <b>1</b> секунду"
+	return "Детонация метки дестабилизатора дает вам иммунитет к оглушению и уменьшение получаемого урона на <b>90%</b>, на <b>1</b> секунду"
 
 /obj/item/crusher_trophy/miner_eye/on_mark_detonation(mob/living/target, mob/living/user)
 	user.apply_status_effect(STATUS_EFFECT_BLOODDRUNK)
@@ -532,7 +532,7 @@
 	bonus_value = 5
 
 /obj/item/crusher_trophy/tail_spike/effect_desc()
-	return "детонация метки дестабилизатора взрывает врага, нанося <b>[bonus_value]</b> урона близлежащим врагам и отталкивая их"
+	return "Детонация метки дестабилизатора взрывает врага, нанося <b>[bonus_value]</b> урона близлежащим врагам и отталкивая их"
 
 /obj/item/crusher_trophy/tail_spike/on_mark_detonation(mob/living/target, mob/living/user)
 	for(var/mob/living/L in oview(2, user))
@@ -566,7 +566,7 @@
 	var/static/list/damage_heal_order = list(BRUTE, BURN, OXY)
 
 /obj/item/crusher_trophy/demon_claws/effect_desc()
-	return "удары в ближнем бою наносят на <b>[bonus_value * 0.2]</b> больше урона и лечат вас на <b>[bonus_value * 0.1]</b> здоровья, с пятерным эффектом при детонации метки"
+	return "Удары в ближнем бою наносят на <b>[bonus_value * 0.2]</b> больше урона и лечат вас на <b>[bonus_value * 0.1]</b> здоровья, с пятерным эффектом при детонации метки"
 
 /obj/item/crusher_trophy/demon_claws/add_to(obj/item/twohanded/kinetic_crusher/H, mob/living/user)
 	. = ..()
@@ -610,7 +610,7 @@
 	var/deadly_shot = FALSE
 
 /obj/item/crusher_trophy/blaster_tubes/effect_desc()
-	return "выстрел дестабилизатора после детонации метки дестабилизатора наносит <b>[bonus_value]</b> урона, но двигается медленнее"
+	return "Выстрел дестабилизатора после детонации метки дестабилизатора наносит <b>[bonus_value]</b> урона, но двигается медленнее"
 
 /obj/item/crusher_trophy/blaster_tubes/on_projectile_fire(obj/item/projectile/destabilizer/marker, mob/living/user)
 	if(deadly_shot)
@@ -644,7 +644,7 @@
 	denied_type = /obj/item/crusher_trophy/vortex_talisman
 
 /obj/item/crusher_trophy/vortex_talisman/effect_desc()
-	return "детонация метки дестабилизатора призывает самонаводящуюся гончую Иерофанта" //Wall was way too cheesy and allowed miners to be nearly invincible while dumb mob AI just rubbed its face on the wall.
+	return "Детонация метки дестабилизатора призывает самонаводящуюся гончую Иерофанта" //Wall was way too cheesy and allowed miners to be nearly invincible while dumb mob AI just rubbed its face on the wall.
 
 /obj/item/crusher_trophy/vortex_talisman/on_mark_detonation(mob/living/target, mob/living/user)
 	if(isliving(target))
@@ -670,7 +670,7 @@
 	bonus_value = 2
 
 /obj/item/crusher_trophy/adaptive_intelligence_core/effect_desc()
-	return "удары в ближнем бою наносят на <b>[bonus_value]</b> больше урона после атаки по противнику, с пределом в <b>[bonus_value * 10]</b> урона"
+	return "Удары в ближнем бою наносят на <b>[bonus_value]</b> больше урона после атаки по противнику, с пределом в <b>[bonus_value * 10]</b> урона"
 
 /obj/item/crusher_trophy/adaptive_intelligence_core/add_to(obj/item/twohanded/kinetic_crusher/H, mob/living/user)
 	. = ..()
@@ -699,7 +699,7 @@
 	denied_type = /obj/item/crusher_trophy/empowered_legion_skull
 
 /obj/item/crusher_trophy/empowered_legion_skull/effect_desc()
-	return "детонация метки дестабилизатора позволяет вам сделать рывок на небольшую дистанцию в намерении помощи"
+	return "Детонация метки дестабилизатора позволяет вам сделать рывок на небольшую дистанцию в намерении помощи"
 
 /obj/item/crusher_trophy/empowered_legion_skull/on_mark_detonation(mob/living/target, mob/living/user)
 	user.apply_status_effect(STATUS_EFFECT_DASH)
