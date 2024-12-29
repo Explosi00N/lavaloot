@@ -111,7 +111,7 @@
 	if(user.has_status_effect(STATUS_EFFECT_DASH) && user.a_intent == INTENT_HELP)
 		if(user.throw_at(target, range = 3, speed = 3, spin = FALSE, diagonals_first = TRUE))
 			playsound(src, 'sound/effects/stealthoff.ogg', 50, 1, 1)
-			user.visible_message("<span class='warning'>[user] dashes!</span>")
+			user.visible_message(span_warning("[user] делает рывок!"))
 		else
 			to_chat(user, "<span class='warning'>Something prevents you from dashing!</span>")
 		user.remove_status_effect(STATUS_EFFECT_DASH)
@@ -730,7 +730,7 @@
 	var/target_turf = get_turf(target)
 	if(ismineralturf(target_turf))
 		if(isancientturf(target_turf))
-			visible_message("<span class='notice'>This rock appears to be resistant to all mining tools except pickaxes!</span>")
+			visible_message(span_notice("Похоже, что эта порода устойчива ко всем методам копания кроме кирок!"))
 			forcedodge = 0
 		else
 			var/turf/simulated/mineral/M = target_turf
