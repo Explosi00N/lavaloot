@@ -384,12 +384,12 @@
 	name = "legion skull"
 	desc = "Разбитый, безжизненный череп легиона. Может быть установлен как трофей крушителя."
 	ru_names = list(
-        NOMINATIVE = "",
-        GENITIVE = "",
-        DATIVE = "",
-        ACCUSATIVE = "",
-        INSTRUMENTAL = "",
-        PREPOSITIONAL = ""
+        NOMINATIVE = "череп легиона",
+        GENITIVE = "черепа легиона",
+        DATIVE = "черепу легиона",
+        ACCUSATIVE = "череп легиона",
+        INSTRUMENTAL = "черепом легиона",
+        PREPOSITIONAL = "черепе легиона"
 	)
 	icon_state = "legion_skull"
 	denied_type = /obj/item/crusher_trophy/legion_skull
@@ -443,12 +443,12 @@
 	name = "Poison fang"
 	desc = "Уродливый и отравленный клык. Может быть установлен как трофей крушителя."
 	ru_names = list(
-        NOMINATIVE = "",
-        GENITIVE = "",
-        DATIVE = "",
-        ACCUSATIVE = "",
-        INSTRUMENTAL = "",
-        PREPOSITIONAL = ""
+        NOMINATIVE = "отравленный клык",
+        GENITIVE = "отравленного клыка",
+        DATIVE = "отравленному клыку",
+        ACCUSATIVE = "отравленный клык",
+        INSTRUMENTAL = "отравленным клыком",
+        PREPOSITIONAL = "отравленном клыке"
 	)
 	icon_state = "ob_gniga"
 	denied_type = /obj/item/crusher_trophy/fang
@@ -465,12 +465,12 @@
 	name = "Frost gland"
 	desc = "Замороженная железа. Может быть установлена как трофей крушителя."
 	ru_names = list(
-        NOMINATIVE = "",
-        GENITIVE = "",
-        DATIVE = "",
-        ACCUSATIVE = "",
-        INSTRUMENTAL = "",
-        PREPOSITIONAL = ""
+        NOMINATIVE = "морозная железа",
+        GENITIVE = "морозной железы",
+        DATIVE = "морозной железе",
+        ACCUSATIVE = "морозную железу",
+        INSTRUMENTAL = "морозной железой",
+        PREPOSITIONAL = "морозной железе"
 	)
 	icon_state = "ice_gniga"
 	denied_type = /obj/item/crusher_trophy/gland
@@ -501,12 +501,12 @@
 	name = "eye of a blood-drunk hunter"
 	desc = "Его зрачок раздроблен в кашу. Может быть установлено как трофей крушителя."
 	ru_names = list(
-        NOMINATIVE = "",
-        GENITIVE = "",
-        DATIVE = "",
-        ACCUSATIVE = "",
-        INSTRUMENTAL = "",
-        PREPOSITIONAL = ""
+        NOMINATIVE = "глаз кровожадного шахтёра",
+        GENITIVE = "глаза кровожадного шахтёра",
+        DATIVE = "глазу кровожадного шахтёра",
+        ACCUSATIVE = "глаз кровожадного шахтёра",
+        INSTRUMENTAL = "глазом кровожадного шахтёра",
+        PREPOSITIONAL = "глазе кровожадного шахтёра"
 	)
 	icon_state = "hunter_eye"
 	denied_type = /obj/item/crusher_trophy/miner_eye
@@ -521,12 +521,12 @@
 /obj/item/crusher_trophy/tail_spike
 	desc = "Шип, срезанный с хвоста пепельного дрейка. Может быть установлено как трофей крушителя."
 	ru_names = list(
-        NOMINATIVE = "",
-        GENITIVE = "",
-        DATIVE = "",
-        ACCUSATIVE = "",
-        INSTRUMENTAL = "",
-        PREPOSITIONAL = ""
+        NOMINATIVE = "хвостновой шип",
+        GENITIVE = "хвостового шипа",
+        DATIVE = "хвостовому шипу",
+        ACCUSATIVE = "хвостовой шип",
+        INSTRUMENTAL = "хвостовым шипом",
+        PREPOSITIONAL = "хвостовом шипе"
 	)
 	denied_type = /obj/item/crusher_trophy/tail_spike
 	bonus_value = 5
@@ -552,12 +552,12 @@
 	name = "demon claws"
 	desc = "Набор окровавленных когтей вырванных с руки огромного демона. Может быть установлено как трофей крушителя."
 	ru_names = list(
-        NOMINATIVE = "",
-        GENITIVE = "",
-        DATIVE = "",
-        ACCUSATIVE = "",
-        INSTRUMENTAL = "",
-        PREPOSITIONAL = ""
+        NOMINATIVE = "демонические когти",
+        GENITIVE = "демонических когтей",
+        DATIVE = "демоническим когтям",
+        ACCUSATIVE = "демонические когти",
+        INSTRUMENTAL = "демоническими когтями",
+        PREPOSITIONAL = "демонических когтях"
 	)
 	icon_state = "demon_claws"
 	gender = PLURAL
@@ -596,12 +596,12 @@
 	name = "blaster tubes"
 	desc = "Бластерные трубки, забранные с руки колосса. Может быть установлено как трофей крушителя."
 	ru_names = list(
-        NOMINATIVE = "",
-        GENITIVE = "",
-        DATIVE = "",
-        ACCUSATIVE = "",
-        INSTRUMENTAL = "",
-        PREPOSITIONAL = ""
+        NOMINATIVE = "бластерные трубки",
+        GENITIVE = "бластерных трубок",
+        DATIVE = "бластерным трубкам",
+        ACCUSATIVE = "бластерные трубки",
+        INSTRUMENTAL = "бластерными трубками",
+        PREPOSITIONAL = "бластерных трубках"
 	)
 	icon_state = "blaster_tubes"
 	gender = PLURAL
@@ -633,12 +633,12 @@
 	name = "vortex talisman"
 	desc = "Мерцающий талисман, ранее бывший маяком Иерофанта. Может быть установлено как трофей крушителя."
 	ru_names = list(
-        NOMINATIVE = "",
-        GENITIVE = "",
-        DATIVE = "",
-        ACCUSATIVE = "",
-        INSTRUMENTAL = "",
-        PREPOSITIONAL = ""
+        NOMINATIVE = "талисман вихря",
+        GENITIVE = "талисмана вихря",
+        DATIVE = "талисману вихря",
+        ACCUSATIVE = "талисман вихря",
+        INSTRUMENTAL = "талисманом вихря",
+        PREPOSITIONAL = "талисмане вихря"
 	)
 	icon_state = "vortex_talisman"
 	denied_type = /obj/item/crusher_trophy/vortex_talisman
@@ -658,12 +658,12 @@
 	name = "adaptive intelligence core"
 	desc = "Кажется, это одно из ядер огромного робота. Может быть установлено как трофей крушителя."
 	ru_names = list(
-        NOMINATIVE = "",
-        GENITIVE = "",
-        DATIVE = "",
-        ACCUSATIVE = "",
-        INSTRUMENTAL = "",
-        PREPOSITIONAL = ""
+        NOMINATIVE = "адаптивное ядро ИИ",
+        GENITIVE = "адаптивного ядра ИИ",
+        DATIVE = "адаптивному ядру ИИ",
+        ACCUSATIVE = "адаптивное ядро ИИ",
+        INSTRUMENTAL = "адаптивным ядром ИИ",
+        PREPOSITIONAL = "адаптивном ядре ИИ"
 	)
 	icon_state = "adaptive_core"
 	denied_type = /obj/item/crusher_trophy/adaptive_intelligence_core
@@ -688,12 +688,12 @@
 	name = "empowered legion skull"
 	desc = "Устрашающий череп с горящими красными глазами."
 	ru_names = list(
-        NOMINATIVE = "",
-        GENITIVE = "",
-        DATIVE = "",
-        ACCUSATIVE = "",
-        INSTRUMENTAL = "",
-        PREPOSITIONAL = ""
+        NOMINATIVE = "усиленный череп легиона",
+        GENITIVE = "усиленного черепа легиона",
+        DATIVE = "усиленному черепу легиона",
+        ACCUSATIVE = "усиленный череп легиона",
+        INSTRUMENTAL = "усиленным черепом легиона",
+        PREPOSITIONAL = "усиленном черепе легиона"
 	)
 	icon_state = "ashen_skull"
 	denied_type = /obj/item/crusher_trophy/empowered_legion_skull
@@ -710,7 +710,15 @@
 	icon_state = "magmite_crusher"
 	item_state = "magmite_crusher0"
 	name = "magmite proto-kinetic crusher"
-	desc = "An early design of the proto-kinetic accelerator, it is now a combination of various mining tools infused with magmite, forming a high-tech club, increasing its capacity as a mining tool."
+	desc = "Ранний дизайн прото-кинетического акселератора, теперь являющийся кучей различных шахтёрских иструментов приваренных друг к другу плазменным магмитом, формирующих высокотехнологичный топор. Магмит улучшает шахтёрские возможности крушителя."
+	ru_names = list(
+        NOMINATIVE = "магмитовый прото-кинетический крушитель",
+        GENITIVE = "магмитового прото-кинетического крушителя",
+        DATIVE = "магмитовому прото-кинетическому крушителю",
+        ACCUSATIVE = "магмитовый прото-кинетический крушитель",
+        INSTRUMENTAL = "магмитовым прото-кинетическим крушителем",
+        PREPOSITIONAL = "магмитовом прото-кинетическом крушителе"
+	)
 	destab = /obj/item/projectile/destabilizer/mega
 	upgraded = TRUE
 
@@ -738,9 +746,17 @@
 	icon_state = "magmite_crusher"
 	item_state = "magmite_crusher0"
 	name = "unfinished proto-kinetic crusher"
-	desc = "An early design of the proto-kinetic accelerator, it is now a combination of various mining tools infused with magmite, forming a new design, but there is not enough magmite to upgrade it's destabilizer."
+	desc = "Ранний дизайн прото-кинетического акселератора, теперь являющийся кучей различных шахтёрских иструментов приваренных друг к другу плазменным магмитом. Однако, магмитовых деталей не хватило на улучшение дестабилизатора."
+	ru_names = list(
+        NOMINATIVE = "незавершенный прото-кинетический крушитель",
+        GENITIVE = "незавершенного прото-кинетического крушителя",
+        DATIVE = "незавершенному прото-кинетическому крушителю",
+        ACCUSATIVE = "незавершенный прото-кинетический крушитель",
+        INSTRUMENTAL = "незавершенным прото-кинетическим крушителем",
+        PREPOSITIONAL = "незавершенном прото-кинетическом крушителе"
+	)
 	upgraded = TRUE
 
 /obj/item/twohanded/kinetic_crusher/almost/examine(mob/living/user)
 	. = ..()
-	. += "<span class='notice'>Perhaps you could use another magmite upgrade part to fully upgrade your crusher.</span>"
+	. += span_notice("Возможно, вы можете применить еще немного магмитовых деталей чтобы полностью улучшить ваш крушитель.")
