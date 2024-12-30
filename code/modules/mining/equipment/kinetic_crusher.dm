@@ -4,14 +4,15 @@
 	icon_state = "crusher"
 	item_state = "crusher0"
 	name = "proto-kinetic crusher"
-	desc = "Ранний дизайн прото-кинетического акселератора, лишь немногим отличающийся от кучи различных шахтёрских иструментов прибитых друг к другу, формирующих высокотехнологичный топор. \ Хоть это и является эффективным шахтерским инструментом, с локальной фауной он поможет только самым опытным и/или сумашедшим шахтёрам."
+	desc = "Ранний дизайн прото-кинетического акселератора, лишь немногим отличающийся от кучи различных шахтёрских инструментов, прибитых друг к другу, формирующих высокотехнологичный топор. \
+	Хоть это и является эффективным шахтёрским инструментом, для борьбы с местной фауной его могут использовать либо самые опытные, либо самые сумасшедшие шахтёры."
 	ru_names = list(
-        NOMINATIVE = "прото-кинетический крушитель",
-        GENITIVE = "прото-кинетического крушителя",
-        DATIVE = "прото-кинетическому крушителю",
-        ACCUSATIVE = "прото-кинетический крушитель",
-        INSTRUMENTAL = "прото-кинетическим крушителем",
-        PREPOSITIONAL = "прото-кинетическом крушителе"
+            NOMINATIVE = "прото-кинетический крушитель",
+            GENITIVE = "прото-кинетического крушителя",
+            DATIVE = "прото-кинетическому крушителю",
+            ACCUSATIVE = "прото-кинетический крушитель",
+            INSTRUMENTAL = "прото-кинетическим крушителем",
+            PREPOSITIONAL = "прото-кинетическом крушителе"
 	)
 	force = 0 //You can't hit stuff unless wielded
 	w_class = WEIGHT_CLASS_BULKY
@@ -44,11 +45,11 @@
 
 /obj/item/twohanded/kinetic_crusher/examine(mob/living/user)
 	. = ..()
-	. += span_notice("Отметьте существо дестабилизирующим полем, затем нанесите удар в ближнем бою чтобы нанести <b>[force + detonation_damage]</b> урона.")
-	. += span_notice("Наносит <b>[force + detonation_damage + backstab_bonus]</b> урона вместо <b>[force + detonation_damage]</b>, если удар был нанесен в спину.")
+	. += span_notice("Отметьте существо дестабилизирующим полем, затем нанесите удар в ближнем бою, чтобы нанести <b>[force + detonation_damage]</b> единиц[declension_ru(force + detonation_damage, "у", "ы", "")] урона.")
+	. += span_notice("Наносит <b>[force + detonation_damage + backstab_bonus]</b> единиц[declension_ru(force + detonation_damage, "у", "ы", "")] урона вместо <b>[force + detonation_damage]</b>, если удар был нанесён в спину.")
 	for(var/t in trophies)
 		var/obj/item/crusher_trophy/T = t
-		. += span_notice("К нему прикреплен [T], вызывая следующий эффект: [T.effect_desc()].")
+		. += span_notice("К нему прикреплён[genderize.ru(T.gender, "", "а", "о", "ы")] [T.declent_ru(NOMINATIVE)], что вызывает следующий эффект: [T.effect_desc()].")
 
 
 /obj/item/twohanded/kinetic_crusher/attackby(obj/item/I, mob/user, params)
@@ -76,9 +77,9 @@
 
 /obj/item/twohanded/kinetic_crusher/attack(mob/living/target, mob/living/user, params, def_zone, skip_attack_anim = FALSE)
 	if(!HAS_TRAIT(src, TRAIT_WIELDED))
-		var/warn_message = "[name] слишком тяжел, чтобы использовать его одной рукой."
+		var/warn_message = "[declent_ru(NOMINATIVE)] слишком тяжёл, чтобы использовать его одной рукой."
 		if(user.drop_item_ground(src))
-			warn_message += "Вы роняете [name] на землю.."
+			warn_message += "Вы роняете [declent_ru(ACCUSATIVE)] на землю."
 		to_chat(user, span_warning(warn_message))
 		return ATTACK_CHAIN_BLOCKED_ALL
 	var/datum/status_effect/crusher_damage/damage_track = target.has_status_effect(STATUS_EFFECT_CRUSHERDAMAGETRACKING)
@@ -221,7 +222,7 @@
 	var/target_turf = get_turf(target)
 	if(ismineralturf(target_turf))
 		if(isancientturf(target_turf))
-			visible_message(span_notice("Похоже, что эта порода устойчива ко всем методам копания кроме кирок!"))
+			visible_message(span_notice("Похоже, что эту породу возьмёт только кирка!"))
 		else
 			var/turf/simulated/mineral/M = target_turf
 			new /obj/effect/temp_visual/kinetic_blast(M)
@@ -239,7 +240,7 @@
 
 /obj/item/crusher_trophy/examine(mob/living/user)
 	. = ..()
-	. += span_notice("Вызывает следующий эффект, пока прикреплен к крушителю: [effect_desc()].")
+	. += span_notice("Когда прикреплено к крушителю, вызывает следующий эффект: [effect_desc()].")
 
 /obj/item/crusher_trophy/proc/effect_desc()
 	return "errors"
@@ -257,7 +258,7 @@
 /obj/item/crusher_trophy/proc/add_to(obj/item/twohanded/kinetic_crusher/crusher, mob/living/user)
 	for(var/obj/item/crusher_trophy/crusher_trophy as anything in crusher.trophies)
 		if(istype(crusher_trophy, denied_type) || istype(src, crusher_trophy.denied_type))
-			balloon_alert("слишком много трофеев!")
+			balloon_alert(user, "нет места!")
 			return FALSE
 	if(loc == user)
 		if(!user.drop_transfer_item_to_loc(src, crusher))
@@ -265,7 +266,7 @@
 	else
 		forceMove(crusher)
 	crusher.trophies += src
-	balloon_alert(user, "трофей прикреплен")
+	balloon_alert(user, "прикреплено")
 	return TRUE
 
 /obj/item/crusher_trophy/proc/remove_from(obj/item/twohanded/kinetic_crusher/H, mob/living/user)
