@@ -45,7 +45,7 @@
 
 /obj/item/twohanded/kinetic_crusher/examine(mob/living/user)
 	. = ..()
-	. += span_notice("Отметьте существо дестабилизирующим полем, затем нанесите удар в ближнем бою, чтобы нанести <b>[force + detonation_damage]</b> единиц[declension_ru(force + detonation_damage, "у", "ы", "")] урона.")
+	. += span_notice("Отмтьте существо дестабилизирующим полем, затем нанесите удар в ближнем бою, чтобы нанести <b>[force + detonation_damage]</b> единиц[declension_ru(force + detonation_damage, "у", "ы", "")] урона.")
 	. += span_notice("Наносит <b>[force + detonation_damage + backstab_bonus]</b> единиц[declension_ru(force + detonation_damage, "у", "ы", "")] урона вместо <b>[force + detonation_damage]</b>, если удар был нанесён в спину.")
 	for(var/t in trophies)
 		var/obj/item/crusher_trophy/T = t
