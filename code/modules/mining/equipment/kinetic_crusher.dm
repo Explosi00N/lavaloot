@@ -301,7 +301,7 @@
 	var/missing_health_desc = 10
 
 /obj/item/crusher_trophy/goliath_tentacle/effect_desc()
-	return "детонация метки дестабилизатора наносит на <b>[bonus_value]</b> единиц урона больше за каждые <b>[missing_health_desc]</b> единиц недостающего у вас здоровья"
+	return "детонация метки дестабилизатора наносит на <b>[bonus_value]</b> единиц[declension_ru(bonus_value, "у", "ы", "")] урона больше за каждые <b>[missing_health_desc]</b> единиц[declension_ru(bonus_value, "у", "ы", "")] недостающего у вас здоровья"
 
 /obj/item/crusher_trophy/goliath_tentacle/on_mark_detonation(mob/living/target, mob/living/user)
 	var/missing_health = user.health - user.maxHealth
@@ -341,7 +341,7 @@
 //magmawing watcher
 /obj/item/crusher_trophy/blaster_tubes/magma_wing
 	name = "magmawing watcher wing"
-	desc = "Все еще пылающее крыло магмакрылого наблюдателя. Может быть установлено на крушитель в качестве трофея."
+	desc = "Всё ещё пылающее крыло магмакрылого наблюдателя. Может быть установлено на крушитель в качестве трофея."
 	ru_names = list(
         NOMINATIVE = "крыло магмакрылого наблюдателя",
         GENITIVE = "крыла магмакрылого наблюдателя",
@@ -355,7 +355,7 @@
 	bonus_value = 5
 
 /obj/item/crusher_trophy/blaster_tubes/magma_wing/effect_desc()
-	return "детонация метки дестабилизатора позволяет следующему выстрелу дестабилизатора нанести <b>[bonus_value]</b> единиц урона"
+	return "детонация метки дестабилизатора позволяет следующему выстрелу дестабилизатора нанести <b>[bonus_value]</b> единиц[declension_ru(bonus_value, "у", "ы", "")] урона"
 
 /obj/item/crusher_trophy/blaster_tubes/magma_wing/on_projectile_fire(obj/item/projectile/destabilizer/marker, mob/living/user)
 	if(deadly_shot)
@@ -567,7 +567,7 @@
 	var/static/list/damage_heal_order = list(BRUTE, BURN, OXY)
 
 /obj/item/crusher_trophy/demon_claws/effect_desc()
-	return "удары в ближнем бою наносят на <b>[bonus_value * 0.2]</b> единиц урона больше и лечат вас на <b>[bonus_value * 0.1]</b> единиц здоровья, с пятерным эффектом при детонации метки"
+	return "удары в ближнем бою наносят на <b>[bonus_value * 0.2]</b> единиц[declension_ru(bonus_value * 0.2, "у", "ы", "")] урона больше и лечат вас на <b>[bonus_value * 0.1]</b> единиц[declension_ru(bonus_value * 0.1, "у", "ы", "")] здоровья, с пятерным эффектом при детонации метки"
 
 /obj/item/crusher_trophy/demon_claws/add_to(obj/item/twohanded/kinetic_crusher/H, mob/living/user)
 	. = ..()
@@ -611,7 +611,7 @@
 	var/deadly_shot = FALSE
 
 /obj/item/crusher_trophy/blaster_tubes/effect_desc()
-	return "выстрел дестабилизатора после детонации метки дестабилизатора наносит <b>[bonus_value]</b> единиц урона, но двигается медленнее"
+	return "выстрел дестабилизатора после детонации метки дестабилизатора наносит <b>[bonus_value]</b> единиц[declension_ru(bonus_value, "у", "ы", "")] урона, но двигается медленнее"
 
 /obj/item/crusher_trophy/blaster_tubes/on_projectile_fire(obj/item/projectile/destabilizer/marker, mob/living/user)
 	if(deadly_shot)
@@ -671,7 +671,7 @@
 	bonus_value = 2
 
 /obj/item/crusher_trophy/adaptive_intelligence_core/effect_desc()
-	return "удары в ближнем бою наносят на <b>[bonus_value]</b> больше единиц урона после атаки по противнику, с пределом в <b>[bonus_value * 10]</b> урона"
+	return "удары в ближнем бою наносят на <b>[bonus_value]</b> больше  урона после атаки по противнику, с пределом в <b>[bonus_value * 10]</b> урона"
 
 /obj/item/crusher_trophy/adaptive_intelligence_core/add_to(obj/item/twohanded/kinetic_crusher/H, mob/living/user)
 	. = ..()
@@ -731,7 +731,7 @@
 	var/target_turf = get_turf(target)
 	if(ismineralturf(target_turf))
 		if(isancientturf(target_turf))
-			visible_message(span_notice("Похоже, что эта порода устойчива ко всем методам копания кроме кирок!"))
+			visible_message(span_notice("Похоже, что эту породу возьмёт только кирка!"))
 			forcedodge = 0
 		else
 			var/turf/simulated/mineral/M = target_turf
