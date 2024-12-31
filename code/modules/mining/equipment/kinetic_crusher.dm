@@ -522,12 +522,12 @@
 /obj/item/crusher_trophy/tail_spike
 	desc = "Шип, срезанный с хвоста пепельного дрейка. Может быть установлено на крушитель в качестве трофея."
 	ru_names = list(
-        NOMINATIVE = "хвостновой шип",
-        GENITIVE = "хвостового шипа",
-        DATIVE = "хвостовому шипу",
-        ACCUSATIVE = "хвостовой шип",
-        INSTRUMENTAL = "хвостовым шипом",
-        PREPOSITIONAL = "хвостовом шипе"
+            NOMINATIVE = "хвостновой шип",
+            GENITIVE = "хвостового шипа",
+            DATIVE = "хвостовому шипу",
+            ACCUSATIVE = "хвостовой шип",
+            INSTRUMENTAL = "хвостовым шипом",
+            PREPOSITIONAL = "хвостовом шипе"
 	)
 	denied_type = /obj/item/crusher_trophy/tail_spike
 	bonus_value = 5
