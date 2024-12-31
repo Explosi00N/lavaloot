@@ -533,8 +533,7 @@
 	bonus_value = 5
 
 /obj/item/crusher_trophy/tail_spike/effect_desc()
-	return "детонация метки дестабилизатора взрывает врага, нанося <b>[bonus_value]</b> 
-единиц[declension_ru(bonus_value, "у", "ы", "")] урона близлежащим врагам и отталкивая их"
+	return "детонация метки дестабилизатора взрывает врага, нанося <b>[bonus_value]</b> единиц[declension_ru(bonus_value, "у", "ы", "")] урона близлежащим врагам и отталкивая их"
 
 /obj/item/crusher_trophy/tail_spike/on_mark_detonation(mob/living/target, mob/living/user)
 	for(var/mob/living/L in oview(2, user))
