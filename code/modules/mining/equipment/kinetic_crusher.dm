@@ -4,8 +4,8 @@
 	icon_state = "crusher"
 	item_state = "crusher0"
 	name = "proto-kinetic crusher"
-	desc = "Ранний дизайн прото-кинетического акселератора, лишь немногим отличающийся от кучи различных шахтёрских инструментов, прибитых друг к другу, формирующих высокотехнологичный топор. \
-	Хоть это и является эффективным шахтёрским инструментом, для борьбы с местной фауной его могут использовать либо самые опытные, либо самые сумасшедшие шахтёры."
+	desc = "Ранняя версия Кинетического Асклератора, по сути являющаяся кучей шахтёрских инструментов прибитых друг к другу в форму топора. \
+	Эффективен, но часто смертелен для неопытных и не сошедших с ума шахтеров. Позволяет отмечать фауну дестабилизирующим полем, после чего взрывать его ударом в ближнем бою."
 	ru_names = list(
             NOMINATIVE = "прото-кинетический крушитель",
             GENITIVE = "прото-кинетического крушителя",
@@ -45,11 +45,11 @@
 
 /obj/item/twohanded/kinetic_crusher/examine(mob/living/user)
 	. = ..()
-	. += span_notice("Отметьте существо дестабилизирующим полем, затем нанесите удар в ближнем бою, чтобы нанести <b>[force + detonation_damage]</b> единиц[declension_ru(force + detonation_damage, "у", "ы", "")] урона.")
-	. += span_notice("Наносит <b>[force + detonation_damage + backstab_bonus]</b> единиц[declension_ru(force + detonation_damage + backstab_bonus, "у", "ы", "")] урона вместо <b>[force + detonation_damage]</b>, если удар был нанесён в спину.")
+	. += span_notice("Отметьте существо дестабилизирующим полем, затем нанесите удар чтобы нанести <b>[force + detonation_damage]</b> единиц[declension_ru(force + detonation_damage, "у", "ы", "")] урона.")
+	. += span_notice("Наносит <b>[force + detonation_damage + backstab_bonus]</b> единиц[declension_ru(force + detonation_damage + backstab_bonus, "у", "ы", "")] урона вместо <b>[force + detonation_damage]</b>, при ударе в спину.")
 	for(var/t in trophies)
 		var/obj/item/crusher_trophy/T = t
-		. += span_notice("К нему прикреплён[genderize_ru(T.gender, "", "а", "о", "ы")] <b>[T.declent_ru(NOMINATIVE)]</b>, что вызывает следующий эффект: [T.effect_desc()].")
+		. += span_notice("Прикреплен[genderize_ru(T.gender, "", "а", "о", "ы")] <b>[T.declent_ru(NOMINATIVE)]</b>, что вызывает следующий эффект: [T.effect_desc()].")
 
 
 /obj/item/twohanded/kinetic_crusher/attackby(obj/item/I, mob/user, params)
@@ -240,7 +240,7 @@
 
 /obj/item/crusher_trophy/examine(mob/living/user)
 	. = ..()
-	. += span_notice("Когда прикреплено к крушителю, вызывает следующий эффект: [effect_desc()].")
+	. += span_notice("Dызывает следующий эффект, если используется как трофей крушителя: [effect_desc()].")
 
 /obj/item/crusher_trophy/proc/effect_desc()
 	return "errors"
@@ -301,7 +301,7 @@
 	var/missing_health_desc = 10
 
 /obj/item/crusher_trophy/goliath_tentacle/effect_desc()
-	return "детонация метки дестабилизатора наносит на <b>[bonus_value]</b> единиц[declension_ru(bonus_value, "у", "ы", "")] урона больше за каждые <b>[missing_health_desc]</b> единиц[declension_ru(missing_health_desc, "у", "ы", "")] недостающего у вас здоровья"
+	return "взрыв метки наносит <b>[bonus_value]</b> дополнительного урона за каждые <b>[missing_health_desc]</b> единиц[declension_ru(missing_health_desc, "у", "ы", "")] недостающего у вас здоровья"
 
 /obj/item/crusher_trophy/goliath_tentacle/on_mark_detonation(mob/living/target, mob/living/user)
 	var/missing_health = user.health - user.maxHealth
@@ -327,7 +327,7 @@
 	bonus_value = 5
 
 /obj/item/crusher_trophy/watcher_wing/effect_desc()
-	return "детонация метки дестабилизатора не позволяет некоторым существам использовать дальнобойные атаки в течении <b>[bonus_value * 0.1]</b> секунд[declension_ru(bonus_value * 0.1, "ы", "", "")]"
+	return "взрыв метки не позволяет фауне использовать дальнобойные атаки в течении <b>[bonus_value * 0.1]</b> секунд[declension_ru(bonus_value * 0.1, "ы", "", "")]"
 
 /obj/item/crusher_trophy/watcher_wing/on_mark_detonation(mob/living/target, mob/living/user)
 	if(ishostile(target))
@@ -355,7 +355,7 @@
 	bonus_value = 5
 
 /obj/item/crusher_trophy/blaster_tubes/magma_wing/effect_desc()
-	return "детонация метки дестабилизатора позволяет следующему выстрелу дестабилизатора нанести <b>[bonus_value]</b> единиц[declension_ru(bonus_value, "у", "ы", "")] урона"
+	return "дестабилизатор наносит <b>[bonus_value]</b> единиц[declension_ru(bonus_value, "у", "ы", "")] урона, если выстрел произошел после взрыва метки"
 
 /obj/item/crusher_trophy/blaster_tubes/magma_wing/on_projectile_fire(obj/item/projectile/destabilizer/marker, mob/living/user)
 	if(deadly_shot)
@@ -397,7 +397,7 @@
 	bonus_value = 3
 
 /obj/item/crusher_trophy/legion_skull/effect_desc()
-	return "выстрел дестабилизатора перезаряжается на <b>[bonus_value * 0.1]</b> секунд[declension_ru(bonus_value * 0.1, "у", "ы", "")] быстрее"
+	return "перезарядка дестабилизатора ускоряется на <b>[bonus_value * 0.1]</b> секунд[declension_ru(bonus_value * 0.1, "у", "ы", "")]"
 
 /obj/item/crusher_trophy/legion_skull/add_to(obj/item/twohanded/kinetic_crusher/H, mob/living/user)
 	. = ..()
@@ -456,7 +456,7 @@
 	bonus_value = 1.1
 
 /obj/item/crusher_trophy/fang/effect_desc()
-	return "фауна получает на 10% больше урона в течении 2 секунд после детонации метки дестабилизатора"
+	return "фауна получает на 10% больше урона в течении 2 секунд после взрыва метки"
 
 /obj/item/crusher_trophy/fang/on_mark_detonation(mob/living/target, mob/living/user)
 	target.apply_status_effect(STATUS_EFFECT_FANG_EXHAUSTION, bonus_value)
@@ -513,7 +513,7 @@
 	denied_type = /obj/item/crusher_trophy/miner_eye
 
 /obj/item/crusher_trophy/miner_eye/effect_desc()
-	return "детонация метки дестабилизатора даёт вам иммунитет к оглушению и уменьшение получаемого урона на <b>90%</b>, на <b>1</b> секунду"
+	return "взрыв метки даёт вам иммунитет к оглушению и уменьшение получаемого урона на <b>90%</b>, на <b>1</b> секунду"
 
 /obj/item/crusher_trophy/miner_eye/on_mark_detonation(mob/living/target, mob/living/user)
 	user.apply_status_effect(STATUS_EFFECT_BLOODDRUNK)
@@ -533,7 +533,7 @@
 	bonus_value = 5
 
 /obj/item/crusher_trophy/tail_spike/effect_desc()
-	return "детонация метки дестабилизатора взрывает врага, нанося <b>[bonus_value]</b> единиц[declension_ru(bonus_value, "у", "ы", "")] урона близлежащим врагам и отталкивая их"
+	return "детонация метки дестабилизатора взрывает врага, отталкивая и нанося <b>[bonus_value]</b> урона близлежащим врагам"
 
 /obj/item/crusher_trophy/tail_spike/on_mark_detonation(mob/living/target, mob/living/user)
 	for(var/mob/living/L in oview(2, user))
@@ -711,7 +711,7 @@
 	icon_state = "magmite_crusher"
 	item_state = "magmite_crusher0"
 	name = "magmite proto-kinetic crusher"
-	desc = "Ранний дизайн прото-кинетического акселератора, теперь являющийся кучей различных шахтёрских иструментов приваренных друг к другу плазменным магмитом, формирующих высокотехнологичный топор. Магмит улучшает шахтёрские возможности крушителя."
+	desc = "Ранняя версия Кинетического Аскелератора, теперь улучшенная магмитом, позволяя дестабилизатору пробивать породу насквозь. Если эта вещь у вас в арсенале, вы знаете что делаете."
 	ru_names = list(
             NOMINATIVE = "магмитовый прото-кинетический крушитель",
             GENITIVE = "магмитового прото-кинетического крушителя",
