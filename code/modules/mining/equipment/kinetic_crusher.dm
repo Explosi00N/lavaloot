@@ -4,8 +4,7 @@
 	icon_state = "crusher"
 	item_state = "crusher0"
 	name = "proto-kinetic crusher"
-	desc = "Ранняя версия Кинетического Асклератора, по сути являющаяся кучей шахтёрских инструментов прибитых друг к другу в форму топора. \
-	Эффективен, но часто смертелен для неопытных и не сошедших с ума шахтеров. Позволяет отмечать фауну дестабилизирующим полем, после чего взрывать его ударом в ближнем бою."
+	desc = "Ранняя версия Кинетического Асклератора, по сути являющаяся кучей шахтёрских инструментов прибитых друг к другу в форму топора. Эффективен, но часто смертелен для неопытных шахтеров. Оснащен дестабилизатором."
 	ru_names = list(
             NOMINATIVE = "прото-кинетический крушитель",
             GENITIVE = "прото-кинетического крушителя",
@@ -14,6 +13,7 @@
             INSTRUMENTAL = "прото-кинетическим крушителем",
             PREPOSITIONAL = "прото-кинетическом крушителе"
 	)
+	gender = MALE
 	force = 0 //You can't hit stuff unless wielded
 	w_class = WEIGHT_CLASS_BULKY
 	slot_flags = ITEM_SLOT_BACK
@@ -45,8 +45,9 @@
 
 /obj/item/twohanded/kinetic_crusher/examine(mob/living/user)
 	. = ..()
-	. += span_notice("Отметьте существо дестабилизирующим полем, затем нанесите удар чтобы нанести <b>[force + detonation_damage]</b> единиц[declension_ru(force + detonation_damage, "у", "ы", "")] урона.")
-	. += span_notice("Наносит <b>[force + detonation_damage + backstab_bonus]</b> единиц[declension_ru(force + detonation_damage + backstab_bonus, "у", "ы", "")] урона вместо <b>[force + detonation_damage]</b>, при ударе в спину.")/
+	. += span_notice("Возьмите в обе руки и нажмите по любой клетке чтобы выстрелить дестабилизатором, способным разрушать породу. При попадании по фауне отмечает еще дестабилизирующим полем")
+	. += span_notice("Удары по отмеченной дестабилизатором фауне наносят <b>[force + detonation_damage]</b> единиц[declension_ru(force + detonation_damage, "у", "ы", "")] урона.")
+	. += span_notice("Наносит <b>[force + detonation_damage + backstab_bonus]</b> единиц[declension_ru(force + detonation_damage + backstab_bonus, "у", "ы", "")] урона вместо <b>[force + detonation_damage]</b> при ударе в спину.")
 	. += ..()
 	. += span_notice("Прикреплены следующие трофеи:")
 	for(var/t in trophies)
@@ -296,6 +297,7 @@
             INSTRUMENTAL = "щупальцем голиафа",
             PREPOSITIONAL = "щупальце голиафа"
 	)
+	gender = NEUTER
 	icon_state = "goliath_tentacle"
 	denied_type = /obj/item/crusher_trophy/goliath_tentacle
 	bonus_value = 2
@@ -324,6 +326,7 @@
             INSTRUMENTAL = "крылом наблюдателя",
             PREPOSITIONAL = "крыле наблюдателя"
 	)
+	gender = NEUTER
 	icon_state = "watcher_wing"
 	denied_type = /obj/item/crusher_trophy/watcher_wing
 	bonus_value = 5
@@ -379,6 +382,7 @@
             INSTRUMENTAL = "крылом ледокрылого наблюдателя",
             PREPOSITIONAL = "крыле ледокрылого наблюдателя"
 	)
+	gender = NEUTER
 	icon_state = "ice_wing"
 	bonus_value = 8
 
@@ -394,6 +398,7 @@
             INSTRUMENTAL = "черепом легиона",
             PREPOSITIONAL = "черепе легиона"
 	)
+	gender = MALE
 	icon_state = "legion_skull"
 	denied_type = /obj/item/crusher_trophy/legion_skull
 	bonus_value = 3
@@ -423,6 +428,7 @@
             INSTRUMENTAL = "огромным щупальцем голиафа",
             PREPOSITIONAL = "огромном щупальце голиафа"
 	)
+	gender = NEUTER
 	icon_state = "ancient_goliath_tentacle"
 	denied_type = /obj/item/crusher_trophy/eyed_tentacle
 	bonus_value = 1
@@ -453,6 +459,7 @@
             INSTRUMENTAL = "отравленным клыком",
             PREPOSITIONAL = "отравленном клыке"
 	)
+	gender = MALE
 	icon_state = "ob_gniga"
 	denied_type = /obj/item/crusher_trophy/fang
 	bonus_value = 1.1
@@ -475,6 +482,7 @@
             INSTRUMENTAL = "морозной железой",
             PREPOSITIONAL = "морозной железе"
 	)
+	gender = FEMALE
 	icon_state = "ice_gniga"
 	denied_type = /obj/item/crusher_trophy/gland
 	bonus_value = 0.9
@@ -511,6 +519,7 @@
             INSTRUMENTAL = "глазом кровожадного шахтёра",
             PREPOSITIONAL = "глазе кровожадного шахтёра"
 	)
+	gender = MALE
 	icon_state = "hunter_eye"
 	denied_type = /obj/item/crusher_trophy/miner_eye
 
@@ -531,11 +540,12 @@
             INSTRUMENTAL = "хвостовым шипом",
             PREPOSITIONAL = "хвостовом шипе"
 	)
+	gender = MALE
 	denied_type = /obj/item/crusher_trophy/tail_spike
 	bonus_value = 5
 
 /obj/item/crusher_trophy/tail_spike/effect_desc()
-	return "взрыв метки взрывает врага в пламени, отталкивая и нанося <b>[bonus_value]</b> <b>[bonus_value * 0.1]</b> единиц[declension_ru(bonus_value * 0.1, "у", "ы", "")] урона близлежащим врагам"
+	return "детонация метки вызывает огненный взрыв, отталкивающий и наносящий <b>[bonus_value]</b> <b>[bonus_value * 0.1]</b> единиц[declension_ru(bonus_value * 0.1, "у", "ы", "")] урона близлежащим существам"
 
 /obj/item/crusher_trophy/tail_spike/on_mark_detonation(mob/living/target, mob/living/user)
 	for(var/mob/living/L in oview(2, user))
@@ -643,6 +653,7 @@
             INSTRUMENTAL = "талисманом вихря",
             PREPOSITIONAL = "талисмане вихря"
 	)
+	gender = MALE
 	icon_state = "vortex_talisman"
 	denied_type = /obj/item/crusher_trophy/vortex_talisman
 
@@ -668,6 +679,7 @@
             INSTRUMENTAL = "адаптивным ядром ИИ",
             PREPOSITIONAL = "адаптивном ядре ИИ"
 	)
+	gender = NEUTER
 	icon_state = "adaptive_core"
 	denied_type = /obj/item/crusher_trophy/adaptive_intelligence_core
 	bonus_value = 2
@@ -698,6 +710,7 @@
             INSTRUMENTAL = "усиленным черепом легиона",
             PREPOSITIONAL = "усиленном черепе легиона"
 	)
+	gender = MALE
 	icon_state = "ashen_skull"
 	denied_type = /obj/item/crusher_trophy/empowered_legion_skull
 
@@ -723,6 +736,7 @@
             PREPOSITIONAL = "магмитовом прото-кинетическом крушителе"
 	)
 	destab = /obj/item/projectile/destabilizer/mega
+	gender = MALE
 	upgraded = TRUE
 
 /obj/item/projectile/destabilizer/mega
