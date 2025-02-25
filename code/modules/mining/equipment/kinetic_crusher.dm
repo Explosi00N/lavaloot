@@ -46,10 +46,12 @@
 /obj/item/twohanded/kinetic_crusher/examine(mob/living/user)
 	. = ..()
 	. += span_notice("Отметьте существо дестабилизирующим полем, затем нанесите удар чтобы нанести <b>[force + detonation_damage]</b> единиц[declension_ru(force + detonation_damage, "у", "ы", "")] урона.")
-	. += span_notice("Наносит <b>[force + detonation_damage + backstab_bonus]</b> единиц[declension_ru(force + detonation_damage + backstab_bonus, "у", "ы", "")] урона вместо <b>[force + detonation_damage]</b>, при ударе в спину.")
+	. += span_notice("Наносит <b>[force + detonation_damage + backstab_bonus]</b> единиц[declension_ru(force + detonation_damage + backstab_bonus, "у", "ы", "")] урона вместо <b>[force + detonation_damage]</b>, при ударе в спину.")/
+	. += ..()
+	. += span_notice("Прикреплены следующие трофеи:")
 	for(var/t in trophies)
 		var/obj/item/crusher_trophy/T = t
-		. += span_notice("Прикреплен[genderize_ru(T.gender, "", "а", "о", "ы")] <b>[T.declent_ru(NOMINATIVE)]</b>, что вызывает следующий эффект: [T.effect_desc()].")
+		. += span_notice("<b>[T.declent_ru(NOMINATIVE)]</b>, вызываемый эффект: [T.effect_desc()].")
 
 
 /obj/item/twohanded/kinetic_crusher/attackby(obj/item/I, mob/user, params)
@@ -327,7 +329,7 @@
 	bonus_value = 5
 
 /obj/item/crusher_trophy/watcher_wing/effect_desc()
-	return "взрыв метки не позволяет фауне использовать дальнобойные атаки в течении <b>[bonus_value * 0.1]</b> секунд[declension_ru(bonus_value * 0.1, "ы", "", "")]"
+	return "взрыв метки не позволяет фауне использовать дальние атаки в течении <b>[bonus_value * 0.1]</b> секунд[declension_ru(bonus_value * 0.1, "ы", "", "")]"
 
 /obj/item/crusher_trophy/watcher_wing/on_mark_detonation(mob/living/target, mob/living/user)
 	if(ishostile(target))
@@ -533,7 +535,7 @@
 	bonus_value = 5
 
 /obj/item/crusher_trophy/tail_spike/effect_desc()
-	return "детонация метки дестабилизатора взрывает врага, отталкивая и нанося <b>[bonus_value]</b> урона близлежащим врагам"
+	return "взрыв метки взрывает врага в пламени, отталкивая и нанося <b>[bonus_value]</b> <b>[bonus_value * 0.1]</b> единиц[declension_ru(bonus_value * 0.1, "у", "ы", "")] урона близлежащим врагам"
 
 /obj/item/crusher_trophy/tail_spike/on_mark_detonation(mob/living/target, mob/living/user)
 	for(var/mob/living/L in oview(2, user))
@@ -567,7 +569,7 @@
 	var/static/list/damage_heal_order = list(BRUTE, BURN, OXY)
 
 /obj/item/crusher_trophy/demon_claws/effect_desc()
-	return "удары в ближнем бою наносят на <b>[bonus_value * 0.2]</b> единиц[declension_ru(bonus_value * 0.2, "у", "ы", "")] урона больше и лечат вас на <b>[bonus_value * 0.1]</b> единиц[declension_ru(bonus_value * 0.1, "у", "ы", "")] здоровья, с пятерным эффектом при детонации метки"
+	return "ваши удары наносят <b>[bonus_value * 0.2]</b> доп. единиц[declension_ru(bonus_value * 0.2, "у", "ы", "")] урона и лечат вас на <b>[bonus_value * 0.1]</b> единиц[declension_ru(bonus_value * 0.1, "у", "ы", "")] здоровья. При взрыве метки эффект пятерной."
 
 /obj/item/crusher_trophy/demon_claws/add_to(obj/item/twohanded/kinetic_crusher/H, mob/living/user)
 	. = ..()
@@ -611,7 +613,7 @@
 	var/deadly_shot = FALSE
 
 /obj/item/crusher_trophy/blaster_tubes/effect_desc()
-	return "следующий выстрел дестабилизатора после детонации метки дестабилизатора будет лететь медленнее, но нанесёт <b>[bonus_value]</b> единиц[declension_ru(bonus_value, "у", "ы", "")] урона"
+	return "выстрел дестабилизатором после взрыва метки призовет более медленный снаряд, наносящий <b>[bonus_value]</b> единиц[declension_ru(bonus_value, "у", "ы", "")] урона"
 
 /obj/item/crusher_trophy/blaster_tubes/on_projectile_fire(obj/item/projectile/destabilizer/marker, mob/living/user)
 	if(deadly_shot)
@@ -645,7 +647,7 @@
 	denied_type = /obj/item/crusher_trophy/vortex_talisman
 
 /obj/item/crusher_trophy/vortex_talisman/effect_desc()
-	return "детонация метки дестабилизатора призывает самонаводящуюся гончую Иерофанта" //Wall was way too cheesy and allowed miners to be nearly invincible while dumb mob AI just rubbed its face on the wall.
+	return "взрыв призывает гончих Иерофанта" //Wall was way too cheesy and allowed miners to be nearly invincible while dumb mob AI just rubbed its face on the wall.
 
 /obj/item/crusher_trophy/vortex_talisman/on_mark_detonation(mob/living/target, mob/living/user)
 	if(isliving(target))
@@ -671,7 +673,7 @@
 	bonus_value = 2
 
 /obj/item/crusher_trophy/adaptive_intelligence_core/effect_desc()
-	return "удары в ближнем бою наносят на <b>[bonus_value]</b> единиц[declension_ru(bonus_value, "у", "ы", "")] урона больше после атаки по противнику, с пределом в <b>[bonus_value * 10]</b> единиц[declension_ru(bonus_value, "у", "ы", "")] урона"
+	return "увеличивает ваш урон на <b>[bonus_value]</b> единиц[declension_ru(bonus_value, "у", "ы", "")] с каждой атакой, максимум <b>[bonus_value * 10]</b> единиц[declension_ru(bonus_value, "у", "ы", "")]"
 
 /obj/item/crusher_trophy/adaptive_intelligence_core/add_to(obj/item/twohanded/kinetic_crusher/H, mob/living/user)
 	. = ..()
@@ -700,7 +702,7 @@
 	denied_type = /obj/item/crusher_trophy/empowered_legion_skull
 
 /obj/item/crusher_trophy/empowered_legion_skull/effect_desc()
-	return "детонация метки дестабилизатора позволяет вам сделать рывок на небольшую дистанцию, если выбрано намерение помощи"
+	return "взрыв метки позволяет вам сделать небольшой рыков, если вы в намерении помощи (зеленом)"
 
 /obj/item/crusher_trophy/empowered_legion_skull/on_mark_detonation(mob/living/target, mob/living/user)
 	user.apply_status_effect(STATUS_EFFECT_DASH)
@@ -711,7 +713,7 @@
 	icon_state = "magmite_crusher"
 	item_state = "magmite_crusher0"
 	name = "magmite proto-kinetic crusher"
-	desc = "Ранняя версия Кинетического Аскелератора, теперь улучшенная магмитом, позволяя дестабилизатору пробивать породу насквозь. Если эта вещь у вас в арсенале, вы знаете что делаете."
+	desc = "Ранняя версия Кинетического Аскелератора, по сути высокотехнологичный топор улучшенный магмитом. Улучшенный дестабилизатор пробивает породу, как плазменный резак."
 	ru_names = list(
             NOMINATIVE = "магмитовый прото-кинетический крушитель",
             GENITIVE = "магмитового прото-кинетического крушителя",
