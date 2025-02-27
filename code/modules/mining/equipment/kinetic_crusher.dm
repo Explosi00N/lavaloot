@@ -305,7 +305,7 @@
 	var/missing_health_desc = 10
 
 /obj/item/crusher_trophy/goliath_tentacle/effect_desc()
-	return "взрыв метки наносит <b>[bonus_value]</b> дополнительного урона за каждые <b>[missing_health_desc]</b> единиц[declension_ru(missing_health_desc, "у", "ы", "")] недостающего у вас здоровья"
+	return "Взрыв метки наносит <b>[bonus_value]</b> дополнительного урона за каждые <b>[missing_health_desc]</b> единиц[declension_ru(missing_health_desc, "у", "ы", "")] недостающего у вас здоровья"
 
 /obj/item/crusher_trophy/goliath_tentacle/on_mark_detonation(mob/living/target, mob/living/user)
 	var/missing_health = user.health - user.maxHealth
@@ -332,7 +332,7 @@
 	bonus_value = 5
 
 /obj/item/crusher_trophy/watcher_wing/effect_desc()
-	return "взрыв метки не позволяет фауне использовать дальние атаки в течении <b>[bonus_value * 0.1]</b> секунд[declension_ru(bonus_value * 0.1, "ы", "", "")]"
+	return "Взрыв метки не позволяет фауне использовать дальние атаки в течении <b>[bonus_value * 0.1]</b> секунд[declension_ru(bonus_value * 0.1, "ы", "", "")]"
 
 /obj/item/crusher_trophy/watcher_wing/on_mark_detonation(mob/living/target, mob/living/user)
 	if(ishostile(target))
@@ -360,7 +360,7 @@
 	bonus_value = 5
 
 /obj/item/crusher_trophy/blaster_tubes/magma_wing/effect_desc()
-	return "дестабилизатор наносит <b>[bonus_value]</b> единиц[declension_ru(bonus_value, "у", "ы", "")] урона, если выстрел произошел после взрыва метки"
+	return "Снаряд дестабилизатора наносит <b>[bonus_value]</b> единиц[declension_ru(bonus_value, "у", "ы", "")] урона после взрыва метки"
 
 /obj/item/crusher_trophy/blaster_tubes/magma_wing/on_projectile_fire(obj/item/projectile/destabilizer/marker, mob/living/user)
 	if(deadly_shot)
@@ -404,7 +404,7 @@
 	bonus_value = 3
 
 /obj/item/crusher_trophy/legion_skull/effect_desc()
-	return "перезарядка дестабилизатора ускоряется на <b>[bonus_value * 0.1]</b> секунд[declension_ru(bonus_value * 0.1, "у", "ы", "")]"
+	return "Перезарядка дестабилизатора ускорена на <b>[bonus_value * 0.1]</b> секунд[declension_ru(bonus_value * 0.1, "у", "ы", "")]"
 
 /obj/item/crusher_trophy/legion_skull/add_to(obj/item/twohanded/kinetic_crusher/H, mob/living/user)
 	. = ..()
@@ -434,7 +434,7 @@
 	bonus_value = 1
 
 /obj/item/crusher_trophy/eyed_tentacle/effect_desc()
-	return "крушитель наносит на 50% больше урона, если у цели больше 90% здоровья"
+	return "Крушитель наносит на 50% больше урона, если у цели больше 90% здоровья"
 
 /obj/item/crusher_trophy/eyed_tentacle/on_melee_hit(mob/living/target, mob/living/user)
 	var/procent = (target.health / target.maxHealth) * 100
@@ -450,7 +450,7 @@
 /// Poison fang
 /obj/item/crusher_trophy/fang
 	name = "Poison fang"
-	desc = "Уродливый и отравленный клык. Может быть установлен на крушитель в качестве трофея."
+	desc = "Уродливый и ядовитый клык. Может быть установлен на крушитель в качестве трофея." 
 	ru_names = list(
             NOMINATIVE = "отравленный клык",
             GENITIVE = "отравленного клыка",
@@ -465,7 +465,7 @@
 	bonus_value = 1.1
 
 /obj/item/crusher_trophy/fang/effect_desc()
-	return "фауна получает на 10% больше урона в течении 2 секунд после взрыва метки"
+	return "Фауна получает на 10% больше урона в течении 2 секунд после взрыва метки"
 
 /obj/item/crusher_trophy/fang/on_mark_detonation(mob/living/target, mob/living/user)
 	target.apply_status_effect(STATUS_EFFECT_FANG_EXHAUSTION, bonus_value)
@@ -488,7 +488,7 @@
 	bonus_value = 0.9
 
 /obj/item/crusher_trophy/gland/effect_desc()
-	return "фауна наносит на 10% меньше урона, пока на неё установлена метка дестабилизатора"
+	return "Фауна наносит на 10% меньше урона, пока на неё установлена метка дестабилизатора"
 
 /obj/item/crusher_trophy/gland/on_mark_application(mob/living/simple_animal/target, datum/status_effect/crusher_mark/mark, had_mark)
 	if(had_mark)
@@ -524,7 +524,7 @@
 	denied_type = /obj/item/crusher_trophy/miner_eye
 
 /obj/item/crusher_trophy/miner_eye/effect_desc()
-	return "взрыв метки даёт вам иммунитет к оглушению и уменьшение получаемого урона на <b>90%</b>, на <b>1</b> секунду"
+	return "Даёт вам иммунитет к оглушению и снижает получаемый урона на <b>90%</b> в течении <b>1</b> секунды после взрыва метки"
 
 /obj/item/crusher_trophy/miner_eye/on_mark_detonation(mob/living/target, mob/living/user)
 	user.apply_status_effect(STATUS_EFFECT_BLOODDRUNK)
@@ -545,7 +545,7 @@
 	bonus_value = 5
 
 /obj/item/crusher_trophy/tail_spike/effect_desc()
-	return "детонация метки вызывает огненный взрыв, отталкивающий и наносящий <b>[bonus_value]</b> <b>[bonus_value * 0.1]</b> единиц[declension_ru(bonus_value * 0.1, "у", "ы", "")] урона близлежащим существам"
+	return "Детонация метки вызывает взрыв, оталлкивающий и наносящий <b>[bonus_value]</b> <b>[bonus_value * 0.1]</b> единиц[declension_ru(bonus_value * 0.1, "у", "ы", "")] урона близлежащим существам"
 
 /obj/item/crusher_trophy/tail_spike/on_mark_detonation(mob/living/target, mob/living/user)
 	for(var/mob/living/L in oview(2, user))
@@ -579,7 +579,7 @@
 	var/static/list/damage_heal_order = list(BRUTE, BURN, OXY)
 
 /obj/item/crusher_trophy/demon_claws/effect_desc()
-	return "ваши удары наносят <b>[bonus_value * 0.2]</b> доп. единиц[declension_ru(bonus_value * 0.2, "у", "ы", "")] урона и лечат вас на <b>[bonus_value * 0.1]</b> единиц[declension_ru(bonus_value * 0.1, "у", "ы", "")] здоровья. При взрыве метки эффект пятерной."
+	return "Ваши удары наносят <b>[bonus_value * 0.2]</b> бонусного урона и лечат вас на <b>[bonus_value * 0.1]</b> единиц[declension_ru(bonus_value * 0.1, "у", "ы", "")] здоровья. При взрыве метки эффект пятерной."
 
 /obj/item/crusher_trophy/demon_claws/add_to(obj/item/twohanded/kinetic_crusher/H, mob/living/user)
 	. = ..()
@@ -623,7 +623,7 @@
 	var/deadly_shot = FALSE
 
 /obj/item/crusher_trophy/blaster_tubes/effect_desc()
-	return "выстрел дестабилизатором после взрыва метки призовет более медленный снаряд, наносящий <b>[bonus_value]</b> единиц[declension_ru(bonus_value, "у", "ы", "")] урона"
+	return "Выстрел дестабилизатором после взрыва метки призовет более медленный снаряд, наносящий <b>[bonus_value]</b> единиц[declension_ru(bonus_value, "у", "ы", "")] урона"
 
 /obj/item/crusher_trophy/blaster_tubes/on_projectile_fire(obj/item/projectile/destabilizer/marker, mob/living/user)
 	if(deadly_shot)
@@ -658,7 +658,7 @@
 	denied_type = /obj/item/crusher_trophy/vortex_talisman
 
 /obj/item/crusher_trophy/vortex_talisman/effect_desc()
-	return "взрыв призывает гончих Иерофанта" //Wall was way too cheesy and allowed miners to be nearly invincible while dumb mob AI just rubbed its face on the wall.
+	return "Dзрыв призывает трёх самонаводящихся гончих Иерофанта" //Wall was way too cheesy and allowed miners to be nearly invincible while dumb mob AI just rubbed its face on the wall.
 
 /obj/item/crusher_trophy/vortex_talisman/on_mark_detonation(mob/living/target, mob/living/user)
 	if(isliving(target))
@@ -685,7 +685,7 @@
 	bonus_value = 2
 
 /obj/item/crusher_trophy/adaptive_intelligence_core/effect_desc()
-	return "увеличивает ваш урон на <b>[bonus_value]</b> единиц[declension_ru(bonus_value, "у", "ы", "")] с каждой атакой, максимум <b>[bonus_value * 10]</b> единиц[declension_ru(bonus_value, "у", "ы", "")]"
+	return "Увеличивает ваш урон на <b>[bonus_value]</b> единиц[declension_ru(bonus_value, "у", "ы", "")] с каждой атакой, максимум <b>[bonus_value * 10]</b> единиц[declension_ru(bonus_value, "у", "ы", "")]"
 
 /obj/item/crusher_trophy/adaptive_intelligence_core/add_to(obj/item/twohanded/kinetic_crusher/H, mob/living/user)
 	. = ..()
@@ -715,7 +715,7 @@
 	denied_type = /obj/item/crusher_trophy/empowered_legion_skull
 
 /obj/item/crusher_trophy/empowered_legion_skull/effect_desc()
-	return "взрыв метки позволяет вам сделать небольшой рыков, если вы в намерении помощи (зеленом)"
+	return "Dзрыв метки позволяет вам сделать небольшой рыков, если вы в намерении помощи (help)"
 
 /obj/item/crusher_trophy/empowered_legion_skull/on_mark_detonation(mob/living/target, mob/living/user)
 	user.apply_status_effect(STATUS_EFFECT_DASH)
@@ -773,6 +773,7 @@
             PREPOSITIONAL = "незавершенном прото-кинетическом крушителе"
 	)
 	upgraded = TRUE
+// no longer obtainable outside of shitspawn because of ash update
 
 /obj/item/twohanded/kinetic_crusher/almost/examine(mob/living/user)
 	. = ..()
